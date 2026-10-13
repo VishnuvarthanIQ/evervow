@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverVow - Register</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512x512.png?v=5">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png?v=5">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png?v=5">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48x48.png?v=5">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png?v=5">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png?v=5">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=5">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png?v=5">
+    <link rel="shortcut icon" href="favicon.ico?v=5">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for static template) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        corePlugins: { preflight: false },
+        theme: {
+          extend: {
+            colors: { brand: { ivory: '#FAFAF9', champagne: '#F5E6D3', beige: '#E7E5E4', rose: '#C1A58D', sage: '#78866B', charcoal: '#292524' } },
+            fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Lato"', 'sans-serif'] }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css?v=41">
+</head>
+<body class="font-sans text-brand-charcoal bg-brand-ivory dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    
+    
+    <!-- Minimal Header for Auth -->
+    <header class="footer-bg border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-3 d-flex justify-content-between align-items-center">
+            <a class="brand-logo-link d-flex align-items-center gap-2 text-decoration-none brand-logo-container" href="index.html">
+                            <img src="assets/images/logo.png" alt="EverVow" class="brand-logo-img dark:hidden" style="width: 48px; height: 48px; object-fit: contain;">
+                    <img src="assets/images/logo-dark.png" alt="EverVow" class="brand-logo-img hidden dark:block" style="width: 48px; height: 48px; object-fit: contain;">
+                            <span class="font-serif fw-bold text-brand-charcoal dark:text-brand-champagne" style="font-size: 1.6rem; letter-spacing: 0.5px;">EverVow</span>
+                        </a>
+            <div class="d-flex gap-3">
+                <button id="themeToggle" class="btn btn-link p-0 text-gray-600 dark:text-gray-300 hover:text-brand-sage dark:hover:text-brand-sage shadow-none bg-gray-100 dark:bg-gray-800 rounded-circle border border-gray-200 dark:border-gray-700 d-flex align-items-center justify-content-center transition-colors" style="width: 40px; height: 40px;"><svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg><svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></button>
+                <button id="dirToggle" class="btn btn-link text-decoration-none p-0 text-gray-600 dark:text-gray-300 hover:text-brand-sage dark:hover:text-brand-sage shadow-none font-bold text-xs bg-gray-100 dark:bg-gray-800 rounded-circle border border-gray-200 dark:border-gray-700 d-flex align-items-center justify-content-center transition-colors" style="width: 40px; height: 40px;">LTR</button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Main Content Placeholder -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[30vh] py-12 flex items-center justify-center hero-overlay bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1920&q=80');">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="container relative z-10 text-center text-white px-4">
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4">Join Us</h1>
+                <p class="text-lg md:text-xl font-sans max-w-2xl mx-auto">Create an account to start planning your perfect ceremony.</p>
+            </div>
+        </section>
+        
+        <!-- Registration Form Section -->
+        <section class="py-20 bg-brand-ivory dark:bg-gray-900 transition-colors duration-300">
+            <div class="container mx-auto px-4">
+                <div class="max-w-xl mx-auto bg-[#ffffff] dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <h2 class="text-2xl font-serif font-bold text-brand-charcoal dark:text-white mb-2">Create Account</h2>
+                            <p class="text-gray-500 dark:text-gray-400 font-sans text-sm">Join EverVow and begin your beautiful journey.</p>
+                        </div>
+                        
+                        <form id="registerForm" class="needs-validation" novalidate>
+                            <div class="mb-4">
+                                <label for="fullName" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+                                <input type="text" class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-sage focus:border-transparent transition duration-200" id="fullName" placeholder="Jane & John Doe" pattern="^[a-zA-Z\u00C0-\u024F\s'\-\.&]+$" onkeydown="if(/[0-9]/.test(event.key)){event.preventDefault();}" oninput="this.value=this.value.replace(/[0-9]/g,'');" required>
+                                <div class="invalid-feedback dark:text-red-400" id="fullNameFeedback">
+                                    Please enter your name (letters only, no numbers allowed).
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+                                <input type="email" class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-sage focus:border-transparent transition duration-200" id="email" placeholder="you@example.com" required>
+                                <div class="invalid-feedback dark:text-red-400">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Phone Number</label>
+                                <input type="tel" class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-sage focus:border-transparent transition duration-200 phone-validation" id="phone" placeholder="+1 234-567-8900" required>
+                                <div class="invalid-feedback phone-error dark:text-red-400" id="phoneFeedback">
+                                    Please enter a valid 10-digit phone number.
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Password</label>
+                                <input type="password" class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-sage focus:border-transparent transition duration-200" id="password" placeholder="••••••••" required oninput="checkPasswordStrength()">
+                                <div class="mt-2 h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                                    <div id="passwordStrengthBar" class="h-full bg-red-500 w-0 transition-all duration-300"></div>
+                                </div>
+                                <p id="passwordStrengthText" class="text-xs text-gray-500 mt-1 dark:text-gray-400">Password strength</p>
+                                <div class="invalid-feedback dark:text-red-400">
+                                    Please enter a secure password.
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="confirmPassword" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Confirm Password</label>
+                                <input type="password" class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-sage focus:border-transparent transition duration-200" id="confirmPassword" placeholder="••••••••" required>
+                                <div class="invalid-feedback dark:text-red-400">
+                                    Passwords must match.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <div class="form-check flex items-start gap-2">
+                                    <input type="checkbox" class="form-check-input mt-1 dark:bg-gray-700 dark:border-gray-600" id="terms" required>
+                                    <label class="form-check-label text-sm text-gray-600 dark:text-gray-400" for="terms">
+                                        I agree to the <a href="#" class="text-brand-sage hover:text-brand-rose transition duration-200">Terms of Service</a> and <a href="#" class="text-brand-sage hover:text-brand-rose transition duration-200">Privacy Policy</a>
+                                    </label>
+                                    <div class="invalid-feedback dark:text-red-400">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full btn-primary-custom font-bold py-3 px-4 rounded-lg hover:bg-opacity-90 transition duration-300">
+                                Register
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 text-center">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Already have an account? <a href="login.html" class="font-semibold text-brand-sage hover:text-brand-rose transition duration-200">Sign in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        
+
+    <!-- Registration Success Popup Modal -->
+    <div class="modal fade" id="authSuccessModal" tabindex="-1" aria-labelledby="authSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-3xl border-0 shadow-2xl bg-white dark:bg-gray-800 text-brand-charcoal dark:text-gray-100 p-6 text-center">
+                <div class="modal-body p-4">
+                    <div class="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 mx-auto mb-4 d-flex align-items-center justify-content-center shadow-sm">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-brand-charcoal dark:text-white mb-2" id="authSuccessModalLabel">Registration Successful!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 font-sans text-sm mb-6" id="authSuccessModalMsg">
+                        Welcome to EverVow! Your account has been created successfully.
+                    </p>
+                    <button type="button" class="btn btn-primary-custom rounded-pill px-6 py-2.5 font-semibold text-sm w-100 shadow-sm" data-bs-dismiss="modal">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js?v=9"></script>
+    <script src="assets/js/forms.js?v=4"></script>
+    <!-- Add page-specific scripts here -->
+    <script>
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const bar = document.getElementById('passwordStrengthBar');
+            const text = document.getElementById('passwordStrengthText');
+            
+            let strength = 0;
+            if (password.length > 5) strength += 1;
+            if (password.length > 8) strength += 1;
+            if (/[A-Z]/.test(password)) strength += 1;
+            if (/[0-9]/.test(password)) strength += 1;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+
+            if (password.length === 0) {
+                bar.style.width = '0%';
+                text.textContent = 'Password strength';
+            } else if (strength < 2) {
+                bar.style.width = '25%';
+                bar.className = 'h-full w-1/4 transition-all duration-300 bg-red-500';
+                text.textContent = 'Weak';
+            } else if (strength < 4) {
+                bar.style.width = '50%';
+                bar.className = 'h-full w-2/4 transition-all duration-300 bg-yellow-500';
+                text.textContent = 'Moderate';
+            } else {
+                bar.style.width = '100%';
+                bar.className = 'h-full w-full transition-all duration-300 bg-green-500';
+                text.textContent = 'Strong';
+            }
+        }
+
+        // Form validation
+        (function () {
+            'use strict'
+
+            const nameInput = document.getElementById('fullName');
+            const nameFeedback = document.getElementById('fullNameFeedback');
+            const phoneInput = document.getElementById('phone');
+            const phoneFeedback = document.getElementById('phoneFeedback');
+
+            function validateName() {
+                if (!nameInput) return true;
+                const val = nameInput.value.trim();
+
+                if (!val) {
+                    nameInput.setCustomValidity("Please enter your name.");
+                    nameInput.classList.add('is-invalid');
+                    nameInput.classList.remove('is-valid');
+                    if (nameFeedback) nameFeedback.textContent = "Please enter your name.";
+                    return false;
+                }
+
+                if (/\d/.test(val)) {
+                    nameInput.setCustomValidity("Names cannot contain numbers.");
+                    nameInput.classList.add('is-invalid');
+                    nameInput.classList.remove('is-valid');
+                    if (nameFeedback) nameFeedback.textContent = "Names cannot contain numbers. Please use letters only.";
+                    return false;
+                }
+
+                const nameRegex = /^[a-zA-Z\u00C0-\u024F\s'\-\.&]+$/;
+                if (!nameRegex.test(val) || val.length < 2) {
+                    nameInput.setCustomValidity("Please enter a valid name.");
+                    nameInput.classList.add('is-invalid');
+                    nameInput.classList.remove('is-valid');
+                    if (nameFeedback) nameFeedback.textContent = "Please enter a valid name (letters only, at least 2 characters).";
+                    return false;
+                }
+
+                nameInput.setCustomValidity("");
+                nameInput.classList.remove('is-invalid');
+                return true;
+            }
+
+            function validatePhone() {
+                if (!phoneInput) return true;
+                phoneInput.value = phoneInput.value.replace(/[^+\s\-\(\)\d]/g, '');
+                
+                let digitsOnly = phoneInput.value.replace(/\D/g, '');
+                let normalizedDigits = digitsOnly;
+                if (digitsOnly.length === 11 && digitsOnly.startsWith('1')) {
+                    normalizedDigits = digitsOnly.substring(1);
+                }
+                
+                const maxAllowed = phoneInput.value.startsWith('+1') || (digitsOnly.length > 10 && digitsOnly.startsWith('1')) ? 11 : 10;
+                if (digitsOnly.length > maxAllowed) {
+                    let count = 0;
+                    let sliceIndex = 0;
+                    for (let i = 0; i < phoneInput.value.length; i++) {
+                        if (/\d/.test(phoneInput.value[i])) count++;
+                        if (count === maxAllowed) {
+                            sliceIndex = i + 1;
+                            break;
+                        }
+                    }
+                    phoneInput.value = phoneInput.value.substring(0, sliceIndex);
+                    digitsOnly = phoneInput.value.replace(/\D/g, '');
+                    normalizedDigits = (digitsOnly.length === 11 && digitsOnly.startsWith('1')) ? digitsOnly.substring(1) : digitsOnly;
+                }
+
+                const val = phoneInput.value.trim();
+
+                if (!val) {
+                    phoneInput.setCustomValidity("Please enter your phone number.");
+                    phoneInput.classList.add('is-invalid');
+                    phoneInput.classList.remove('is-valid');
+                    if (phoneFeedback) phoneFeedback.textContent = "Please enter your phone number.";
+                    return false;
+                }
+
+                if (normalizedDigits.length !== 10) {
+                    phoneInput.setCustomValidity("Please enter a valid 10-digit phone number.");
+                    phoneInput.classList.add('is-invalid');
+                    phoneInput.classList.remove('is-valid');
+                    if (phoneFeedback) phoneFeedback.textContent = "Please enter a valid 10-digit phone number.";
+                    return false;
+                }
+
+                phoneInput.setCustomValidity("");
+                phoneInput.classList.remove('is-invalid');
+                return true;
+            }
+
+            if (nameInput) {
+                nameInput.addEventListener('keydown', function(e) {
+                    if (/^[0-9]$/.test(e.key)) {
+                        e.preventDefault();
+                        nameInput.setCustomValidity("Numbers are not allowed in names.");
+                        nameInput.classList.add('is-invalid');
+                        if (nameFeedback) nameFeedback.textContent = "Numbers are not allowed in names. Please use letters only.";
+                    }
+                });
+                nameInput.addEventListener('input', function() {
+                    if (/[0-9]/.test(this.value)) {
+                        this.value = this.value.replace(/[0-9]/g, '');
+                        nameInput.setCustomValidity("Numbers are not allowed in names.");
+                        nameInput.classList.add('is-invalid');
+                        if (nameFeedback) nameFeedback.textContent = "Numbers are not allowed in names. Please use letters only.";
+                        return;
+                    }
+                    validateName();
+                });
+                nameInput.addEventListener('blur', validateName);
+            }
+            if (phoneInput) {
+                phoneInput.addEventListener('input', validatePhone);
+                phoneInput.addEventListener('blur', validatePhone);
+            }
+
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        const isNameValid = validateName();
+                        const isPhoneValid = validatePhone();
+
+                        const pwd = document.getElementById('password') ? document.getElementById('password').value : '';
+                        const confirmInput = document.getElementById('confirmPassword');
+                        const confirmPwd = confirmInput ? confirmInput.value : '';
+                        
+                        if (confirmInput) {
+                            if (pwd !== confirmPwd) {
+                                confirmInput.setCustomValidity("Passwords do not match");
+                            } else {
+                                confirmInput.setCustomValidity("");
+                            }
+                        }
+
+                        if (!form.checkValidity() || !isNameValid || !isPhoneValid) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            event.preventDefault();
+                            // Show popup message without redirecting
+                            const successModal = new bootstrap.Modal(document.getElementById('authSuccessModal'));
+                            successModal.show();
+                            form.reset();
+                            form.classList.remove('was-validated');
+                            const bar = document.getElementById('passwordStrengthBar');
+                            const text = document.getElementById('passwordStrengthText');
+                            if (bar) bar.style.width = '0%';
+                            if (text) text.textContent = 'Password strength';
+                            return;
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();
+    </script>
+</body>
+</html>

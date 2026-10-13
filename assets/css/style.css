@@ -1,0 +1,1110 @@
+/* Custom Styles for EverVow */
+:root {
+  --transition-speed: 0.3s;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Typography tweaks */
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Lato', sans-serif;
+}
+
+/* ========================================================
+   Professional Micro-Animations & Motion Design System
+   ======================================================== */
+
+/* 1. Scroll Reveal Animations */
+.animate-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-revealed,
+.fade-in-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger animation utilities */
+.stagger-1 { transition-delay: 0.08s !important; }
+.stagger-2 { transition-delay: 0.16s !important; }
+.stagger-3 { transition-delay: 0.24s !important; }
+.stagger-4 { transition-delay: 0.32s !important; }
+
+/* 2. Keyframe Animations */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+/* Hero Section Entrance Animations - Targets ALL hero sections */
+.hero-overlay h2,
+.hero-overlay .hero-badge,
+section[class*="min-h-"] h2,
+.hero-content h2 {
+  animation: heroFadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  will-change: transform, opacity;
+}
+
+.hero-overlay h1,
+.hero-overlay .display-1,
+.hero-overlay .display-2,
+.hero-overlay .display-3,
+section[class*="min-h-"] h1,
+.hero-content h1 {
+  animation: heroSlideUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+  will-change: transform, opacity;
+}
+
+.hero-overlay p,
+section[class*="min-h-"] p,
+.hero-content p {
+  animation: heroSlideUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+  will-change: transform, opacity;
+}
+
+.hero-overlay .btn,
+.hero-overlay a.btn,
+section[class*="min-h-"] .btn,
+section[class*="min-h-"] a.btn,
+.hero-content .btn {
+  animation: heroScaleUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+  will-change: transform, opacity;
+}
+
+@keyframes heroSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScaleUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Floating quote cards & badges */
+.floating-badge,
+.absolute.-bottom-10 {
+  animation: subtleFloat 5s ease-in-out infinite;
+}
+
+/* 3. Professional Micro-Interactions */
+
+/* Interactive Cards: Smooth lift & shadow expansion */
+.card,
+.service-card,
+.pricing-card,
+.feature-card,
+.bg-brand-beige,
+.dark\:bg-gray-700 {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+}
+
+.card:hover,
+.service-card:hover,
+.pricing-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 18px 30px -10px rgba(0, 0, 0, 0.1), 0 8px 14px -6px rgba(0, 0, 0, 0.06) !important;
+}
+
+.dark .card:hover,
+.dark .service-card:hover,
+.dark .pricing-card:hover {
+  box-shadow: 0 18px 30px -10px rgba(0, 0, 0, 0.4), 0 8px 14px -6px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Interactive Buttons: Smooth tactile lift and click response */
+.btn,
+.btn-primary-custom {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+}
+
+.btn:hover,
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -4px rgba(120, 134, 107, 0.3);
+}
+
+.btn:active,
+.btn-primary-custom:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Images inside cards & grids: Smooth slow zoom on hover */
+.img-zoom-container,
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.img-zoom-container img,
+.card img,
+.group img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.img-zoom-container:hover img,
+.card:hover img,
+.group:hover img {
+  transform: scale(1.04) !important;
+}
+
+/* Numbers (01, 02, 03, 04) & Step Badges: Interactive hover bounce */
+.text-5xl.font-serif,
+.text-5xl[class*="font-serif"],
+.text-brand-sage.font-bold.tracking-widest {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-block;
+}
+
+.col-md-3:hover .text-5xl,
+.col-lg-3:hover .text-5xl,
+.text-5xl:hover {
+  transform: scale(1.08) translateY(-2px) !important;
+}
+
+/* Navbar Brand & Logo: Subtle playful micro-rotation */
+.brand-logo-img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.navbar-brand:hover .brand-logo-img {
+  transform: rotate(5deg) scale(1.06);
+}
+
+/* Navigation Links: Bold, high-contrast professional styling */
+.navbar-nav .nav-link {
+  transition: color 0.25s ease, opacity 0.25s ease !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #292524 !important;
+  position: relative;
+}
+
+.dark .navbar-nav .nav-link {
+  color: #F3F4F6 !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #78866B !important;
+  opacity: 1;
+}
+
+.dark .navbar-nav .nav-link:hover,
+.dark .navbar-nav .nav-link:focus {
+  color: #F5E6D3 !important;
+  opacity: 1;
+}
+
+.navbar-nav .nav-link.active-nav-link {
+  color: #78866B !important;
+  font-weight: 700 !important;
+}
+
+.dark .navbar-nav .nav-link.active-nav-link {
+  color: #F5E6D3 !important;
+  font-weight: 700 !important;
+}
+
+/* Theme Toggle & RTL Icon: Micro rotation on hover */
+#themeToggle,
+#dirToggle,
+#themeToggleSidebar,
+#dirToggleSidebar {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#themeToggle:hover,
+#themeToggleSidebar:hover {
+  transform: rotate(20deg) scale(1.08);
+}
+
+#dirToggle:hover,
+#dirToggleSidebar:hover {
+  transform: scale(1.08);
+}
+
+/* Form Controls: Gentle focus micro-elevation */
+.form-control,
+.form-select,
+textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  transform: translateY(-1px);
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilities */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero-overlay-light {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+/* Form Styles */
+.form-control:focus, .form-select:focus {
+  border-color: #78866B;
+  box-shadow: 0 0 0 0.25rem rgba(178, 172, 136, 0.25);
+}
+
+/* Dashboard Sidebar */
+.dashboard-sidebar {
+  min-height: calc(100vh - 80px);
+}
+
+/* Fix Tailwind and Bootstrap .collapse conflict */
+.collapse {
+    visibility: visible !important;
+}
+
+/* Logo Click Animation */
+.navbar-brand {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.navbar-brand:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+/* Button Transitions */
+.btn {
+    transition: all 0.3s ease-in-out !important;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Sidebar/Sticky Overflow */
+.sidebar, .dashboard-sidebar {
+    top: 80px;
+    position: sticky;
+    z-index: 40;
+}
+
+/* Dark Mode Fixes */
+.dark .dropdown-menu {
+    background-color: #1f2937; /* gray-800 */
+    border-color: #374151; /* gray-700 */
+}
+.dark .dropdown-item {
+    color: #e5e7eb; /* gray-200 */
+}
+.dark .dropdown-item:hover, .dark .dropdown-item:focus {
+    background-color: #374151; /* gray-700 */
+    color: #ffffff;
+}
+.dark ::placeholder {
+    color: #9ca3af !important; /* gray-400 */
+}
+.dark .breadcrumb-item, .dark .breadcrumb-item a {
+    color: #d1d5db; /* gray-300 */
+}
+.dark .breadcrumb-item.active {
+    color: #f3f4f6; /* gray-100 */
+}
+
+/* Custom Outline Button */
+.btn-outline-custom {
+    color: #292524;
+    border: 2px solid #292524;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+.btn-outline-custom:hover {
+    background-color: #292524;
+    color: #ffffff;
+}
+.dark .btn-outline-custom {
+    color: #F5E6D3;
+    border: 2px solid #F5E6D3;
+}
+.dark .btn-outline-custom:hover {
+    background-color: #F5E6D3;
+    color: #292524;
+}
+
+/* Primary Button */
+.btn-primary-custom {
+    background-color: #292524; /* brand-charcoal */
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+.btn-primary-custom:hover {
+    background-color: #2a363d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.dark .btn-primary-custom {
+    background-color: #F5E6D3; /* brand-champagne */
+    color: #292524;
+}
+.dark .btn-primary-custom:hover {
+    background-color: #e5d5bc;
+    color: #292524;
+}
+
+/* Footer Background Fix */
+.footer-bg {
+    background-color: #ffffff;
+}
+.dark .footer-bg {
+    background-color: #111827; /* gray-900 */
+}
+
+
+/* Active Navigation Indicator */
+.navbar-nav .nav-link.active-nav-link, 
+.navbar-nav .dropdown-item.active-nav-link {
+    color: #78866B !important; /* brand-sage */
+    font-weight: 700;
+}
+.navbar-nav > .nav-item > .nav-link.active-nav-link {
+    position: relative;
+}
+.navbar-nav > .nav-item > .nav-link.active-nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background-color: #78866B;
+    border-radius: 2px;
+}
+
+/* Logo Hover Animation */
+.brand-logo-link:hover,
+.brand-logo-container:hover {
+    transform: translateY(-2px);
+}
+.brand-logo-img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    object-fit: contain;
+}
+.brand-logo-container:hover .brand-logo-img,
+.brand-logo-link:hover .brand-logo-img {
+    transform: scale(1.08);
+}
+
+/* Override Bootstrap Default Dropdown Blue Background */
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: #f9fafb; /* gray-50 */
+    color: #292524; /* brand-charcoal */
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #F5E6D3 !important; /* brand-champagne */
+    color: #292524 !important;
+}
+.dark .dropdown-item.active, .dark .dropdown-item:active {
+    background-color: #374151 !important; /* gray-700 */
+    color: #78866B !important; /* brand-sage */
+}
+
+
+/* Professional Editorial Typography Styles */
+body {
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    font-weight: 600 !important; /* Elegant semi-bold instead of harsh 700 bold */
+}
+
+/* Ensure secondary text has perfect contrast in this warm palette */
+.text-gray-600, .text-gray-500, p.text-gray-600 {
+    color: #57534E !important; /* Stone 500 */
+}
+.dark .text-gray-600, .dark .text-gray-500, .dark p.text-gray-600 {
+    color: #A8A29E !important; /* Stone 400 */
+}
+
+/* Make dropdown text look more refined and bold */
+.dropdown-item {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #292524;
+}
+
+
+/* Fix Bootstrap Breadcrumb & Active States Overrides */
+.hero-overlay .breadcrumb-item.active,
+.hero-overlay .breadcrumb-item.active.text-brand-champagne {
+    color: #ffffff !important; /* Match nearby white text */
+}
+
+/* Ensure breadcrumb dividers are visible on dark hero images */
+.hero-overlay .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Fix pagination active state blue override */
+.pagination .page-item.active .page-link {
+    background-color: #78866B !important; /* Sage */
+    border-color: #78866B !important;
+    color: #ffffff !important;
+}
+
+
+/* Fix Bootstrap Table Background in Dark Mode */
+.dark .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #E7E5E4;
+}
+.dark .table th, .dark .table td {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* Better contrast for Navigation Hover & Active states in Dark Mode */
+.dark .navbar-nav .nav-link.active-nav-link, 
+.dark .navbar-nav .dropdown-item.active-nav-link {
+    color: #F5E6D3 !important; /* Champagne is much brighter than Sage */
+}
+.dark .navbar-nav > .nav-item > .nav-link.active-nav-link::before {
+    background-color: #F5E6D3 !important;
+}
+.dark .navbar-nav .nav-link:hover, 
+.dark .navbar-nav .dropdown-item:hover {
+    color: #F5E6D3 !important; /* Force bright hover text in dark mode */
+}
+
+/* Footer Links Hover & Transition */
+footer ul.list-unstyled a, .footer-bg ul.list-unstyled a {
+    transition: all 0.3s ease-in-out !important;
+    display: inline-block;
+}
+footer ul.list-unstyled a:hover, 
+.footer-bg ul.list-unstyled a:hover {
+    color: #292524 !important; /* Brand Charcoal for high contrast in light mode */
+    transform: translateX(6px);
+}
+.dark footer ul.list-unstyled a:hover, 
+.dark .footer-bg ul.list-unstyled a:hover {
+    color: #F5E6D3 !important; /* Force bright Champagne hover text in dark mode */
+}
+
+/* Newsletter Form Border */
+.footer-newsletter-form {
+    border-bottom: 2px solid #292524;
+}
+.dark .footer-newsletter-form {
+    border-bottom: 2px solid #9ca3af; /* gray-400 */
+}
+
+/* Animated Brand Logo */
+@keyframes elegantLogoPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.brand-logo-container:hover .brand-logo-img {
+  animation: elegantLogoPulse 1.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Responsive Mobile Navigation Centering */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 1.25rem;
+    }
+    .navbar-nav {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        width: 100%;
+    }
+    .navbar-nav .dropdown-menu {
+        text-align: center;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .header-actions-container {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        width: 100%;
+        margin-top: 1.25rem !important;
+    }
+    .header-actions-container > div {
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Dashboard Sidebar & Portal Layout
+   ========================================================================== */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #FAF8F5; /* brand-ivory / neutral warm */
+}
+.dark .dashboard-layout {
+    background-color: #111827; /* gray-900 */
+}
+
+.dashboard-sidebar {
+    width: 280px;
+    min-width: 280px;
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.dark .dashboard-sidebar {
+    background-color: #1F2937; /* gray-800 */
+    border-color: #374151; /* gray-700 */
+}
+
+/* Sidebar Nav Links */
+.dashboard-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.925rem;
+    color: #4B5563; /* gray-600 */
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.dashboard-nav-link:hover {
+    background-color: #F3F4F6;
+    color: #78866B; /* brand-sage */
+    transform: translateX(3px);
+}
+.dark .dashboard-nav-link {
+    color: #D1D5DB; /* gray-300 */
+}
+.dark .dashboard-nav-link:hover {
+    background-color: #374151; /* gray-700 */
+    color: #F5E6D3; /* brand-champagne */
+}
+
+/* Active Nav Link */
+.dashboard-nav-link.active {
+    background-color: rgba(120, 134, 107, 0.12);
+    color: #78866B; /* brand-sage */
+    font-weight: 700;
+}
+.dark .dashboard-nav-link.active {
+    background-color: rgba(245, 230, 211, 0.15);
+    color: #F5E6D3; /* brand-champagne */
+}
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.dashboard-topbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 0.85rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dashboard-content-area {
+    padding: 2rem 2.25rem;
+    flex: 1;
+}
+
+@media (max-width: 767.98px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+    .dashboard-sidebar {
+        height: 100%;
+        position: fixed;
+    }
+    .dashboard-content-area {
+        padding: 1.25rem 1rem;
+    }
+}
+
+/* ==========================================================================
+   Dashboard Dark Mode Contrast Enhancements
+   ========================================================================== */
+.dark body {
+    background-color: #111827 !important;
+    color: #F3F4F6 !important;
+}
+
+/* Strict Dark Mode Background Overrides (overrides Bootstrap !important) */
+.dark .bg-white,
+.dark [class*="bg-white"],
+.dark .dashboard-topbar {
+    background-color: #1F2937 !important; /* dark slate/gray-800 */
+    border-color: #374151 !important; /* gray-700 */
+    color: #F9FAFB !important;
+}
+
+.dark .bg-gray-50,
+.dark [class*="bg-gray-50"] {
+    background-color: #111827 !important; /* gray-900 */
+    border-color: #374151 !important;
+    color: #E5E7EB !important;
+}
+
+.dark .bg-brand-ivory {
+    background-color: #1F2937 !important;
+    border-color: #374151 !important;
+    color: #F9FAFB !important;
+}
+
+/* Champagne buttons must ALWAYS have dark text in BOTH light & dark modes */
+.btn.bg-brand-champagne,
+a.btn.bg-brand-champagne,
+button.btn.bg-brand-champagne,
+.dark .btn.bg-brand-champagne,
+.dark a.btn.bg-brand-champagne,
+.dark button.btn.bg-brand-champagne {
+    background-color: #F5E6D3 !important;
+    color: #292524 !important; /* Dark charcoal on cream */
+}
+
+.btn.bg-brand-champagne:hover,
+a.btn.bg-brand-champagne:hover,
+button.btn.bg-brand-champagne:hover,
+.dark .btn.bg-brand-champagne:hover,
+.dark a.btn.bg-brand-champagne:hover,
+.dark button.btn.bg-brand-champagne:hover {
+    background-color: #78866B !important;
+    color: #FFFFFF !important;
+}
+
+/* White CTA buttons (e.g., 'Schedule a Free Chat') must ALWAYS have dark text */
+.btn.bg-white,
+.btn[class*="bg-[#fff]"],
+.btn[class*="bg-white"],
+.dark .btn.bg-white,
+.dark .btn[class*="bg-[#fff]"],
+.dark .btn[class*="bg-white"] {
+    background-color: #FFFFFF !important;
+    color: #292524 !important; /* Dark charcoal on white button */
+}
+.btn.bg-white:hover,
+.dark .btn.bg-white:hover {
+    background-color: #292524 !important;
+    color: #FFFFFF !important;
+}
+
+/* Theme Toggle & RTL Buttons - Crisp, Clear High Contrast in Dark Mode */
+.dark #themeToggle,
+.dark #themeToggleSidebar,
+.dark #themeToggleMobile,
+.dark #dirToggle,
+.dark #dirToggleSidebar,
+.dark #dirToggleMobile {
+    background-color: #374151 !important; /* gray-700 */
+    border: 1px solid #6B7280 !important; /* gray-500 */
+    color: #FFFFFF !important; /* Pure crisp white text & svg */
+}
+.dark #themeToggle svg,
+.dark #themeToggleSidebar svg,
+.dark #themeToggleMobile svg {
+    color: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+.dark #dirToggle,
+.dark #dirToggleSidebar,
+.dark #dirToggleMobile {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+/* Ensure text-brand-charcoal turns white ONLY on dark containers, never on champagne or white buttons */
+.dark .text-brand-charcoal:not(.btn):not([class*="bg-brand-champagne"]):not([class*="bg-white"]) {
+    color: #F9FAFB !important;
+}
+
+/* Contact Office Hours & FAQ Card in Dark Mode */
+.dark .contact-hours-card {
+    background-color: #1F2937 !important;
+    border-color: #374151 !important;
+    color: #F9FAFB !important;
+}
+.dark .contact-hours-card h4 {
+    color: #FFFFFF !important;
+}
+.dark .contact-hours-card li,
+.dark .contact-hours-card span {
+    color: #E5E7EB !important;
+}
+
+/* Section Eyebrow / Kicker Headings in Dark Mode (e.g. THE PROCESS, FIND YOUR STYLE) */
+.dark h2.text-brand-sage,
+.dark h2[class*="tracking-widest"],
+.dark h3[class*="tracking-widest"],
+.dark span[class*="tracking-widest"],
+.dark .text-brand-sage[class*="uppercase"] {
+    color: #F5E6D3 !important; /* Luminous Champagne Gold */
+}
+
+/* All text-brand-sage accents (prices, years, icons, subtitles) glow in bright Champagne Gold in dark mode */
+.dark .text-brand-sage:not(.btn):not([class*="bg-white"]):not([class*="bg-[#fff]"]) {
+    color: #F5E6D3 !important; /* Luminous Champagne Gold */
+}
+.dark svg.text-brand-sage,
+.dark .text-brand-sage svg {
+    color: #F5E6D3 !important;
+    stroke: #F5E6D3 !important;
+}
+
+/* Step Numbers in Dark Mode (01, 02, 03, 04) */
+.dark .text-5xl.font-serif,
+.dark .text-5xl[class*="font-serif"],
+.dark [class*="dark:text-gray-700"],
+.dark [class*="dark:text-brand-champagne"] {
+    color: #F5E6D3 !important; /* Luminous Champagne Gold */
+}
+
+/* Floating Quote Cards in Dark Mode */
+.dark .bg-brand-champagne:not(.btn) {
+    background-color: #1F2937 !important;
+    border: 1px solid #374151 !important;
+    color: #F9FAFB !important;
+}
+.dark .bg-brand-champagne:not(.btn) p,
+.dark .bg-brand-champagne:not(.btn) span {
+    color: #F5E6D3 !important;
+}
+
+/* Partner / Press logos in Dark Mode */
+.dark .opacity-60,
+.dark .opacity-40 {
+    opacity: 0.9 !important;
+    color: #E5E7EB !important;
+}
+
+/* Timeline borders in Dark Mode */
+.dark .border-brand-champagne {
+    border-color: #4B5563 !important;
+}
+
+/* Form Controls & Inputs in Dark Mode */
+.dark .form-control,
+.dark .form-select,
+.dark textarea {
+    background-color: #1F2937 !important;
+    border-color: #4B5563 !important;
+    color: #F9FAFB !important;
+}
+.dark .form-control:focus,
+.dark .form-select:focus,
+.dark textarea:focus {
+    background-color: #1F2937 !important;
+    border-color: #8A9A86 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 0 0 0.25rem rgba(120, 134, 107, 0.3) !important;
+}
+.dark .form-select option {
+    background-color: #1F2937 !important;
+    color: #F9FAFB !important;
+}
+.dark .form-control::placeholder,
+.dark textarea::placeholder {
+    color: #9CA3AF !important;
+}
+
+.dark .form-check-input {
+    background-color: #374151 !important;
+    border-color: #6B7280 !important;
+}
+.dark .form-check-input:checked {
+    background-color: #78866B !important;
+    border-color: #78866B !important;
+}
+
+/* Dark Mode Outline Buttons */
+.dark .btn-outline-secondary {
+    color: #E5E7EB !important;
+    border-color: #4B5563 !important;
+    background-color: transparent !important;
+}
+.dark .btn-outline-secondary:hover {
+    background-color: #374151 !important;
+    color: #FFFFFF !important;
+    border-color: #6B7280 !important;
+}
+
+.dark .btn-outline-dark {
+    color: #E5E7EB !important;
+    border-color: #4B5563 !important;
+    background-color: transparent !important;
+}
+.dark .btn-outline-dark:hover {
+    background-color: #374151 !important;
+    color: #FFFFFF !important;
+    border-color: #6B7280 !important;
+}
+
+/* Dark Mode Badges - High Vibrancy & Readability */
+.dark .badge.bg-amber-100 {
+    background-color: rgba(245, 158, 11, 0.25) !important;
+    color: #FDE68A !important;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+}
+.dark .badge.bg-blue-100 {
+    background-color: rgba(59, 130, 246, 0.25) !important;
+    color: #BFDBFE !important;
+    border: 1px solid rgba(59, 130, 246, 0.45);
+}
+.dark .badge.bg-emerald-100 {
+    background-color: rgba(16, 185, 129, 0.25) !important;
+    color: #A7F3D0 !important;
+    border: 1px solid rgba(16, 185, 129, 0.45);
+}
+.dark .badge.bg-purple-100 {
+    background-color: rgba(168, 85, 247, 0.25) !important;
+    color: #E9D5FF !important;
+    border: 1px solid rgba(168, 85, 247, 0.45);
+}
+.dark .badge.bg-rose-100 {
+    background-color: rgba(244, 63, 94, 0.25) !important;
+    color: #FECDD3 !important;
+    border: 1px solid rgba(244, 63, 94, 0.45);
+}
+
+/* Nav Pills Active in Dark Mode */
+.dark .nav-pills .nav-link.active {
+    background-color: #78866B !important;
+    color: #FFFFFF !important;
+}
+
+/* Home-2 Modern Portfolio Specific Contrast & Visibility Enhancements */
+.dark .text-brand-sage {
+    color: #F5E6D3 !important; /* Glow in Champagne Gold in dark mode */
+}
+.dark .text-brand-charcoal {
+    color: #F9FAFB !important; /* Crisp white-gray in dark mode */
+}
+.dark .bg-gray-750 {
+    background-color: #262E3B !important;
+}
+
+/* Feature Lists & Checkmarks: Maximum Contrast and Readability */
+.dark .card ul li,
+.dark .pricing-card ul li,
+.dark .card ul li span {
+    color: #FFFFFF !important;
+}
+
+.dark .card ul li span.text-brand-champagne {
+    color: #F5E6D3 !important;
+}
+
+/* Ensure hero section elements are never hidden by scroll reveal */
+section:first-of-type,
+section[class*="min-h-"],
+.hero-content {
+    opacity: 1 !important;
+}
+
+section:first-of-type .animate-on-scroll,
+section[class*="min-h-"] .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ==========================================================================
+   Pricing Page: Responsive Comparison Table & Native Details FAQ
+   ========================================================================== */
+.responsive-table-container {
+    container-type: inline-size;
+}
+
+.responsive-pricing-table {
+    --label-2: "The Elopement ($450)";
+    --label-3: "The Standard ($850)";
+    --label-4: "The Premium ($1,250)";
+}
+
+@container (width < 600px) {
+    .responsive-pricing-table,
+    .responsive-pricing-table thead,
+    .responsive-pricing-table tbody,
+    .responsive-pricing-table tr,
+    .responsive-pricing-table th,
+    .responsive-pricing-table td {
+        display: block;
+    }
+
+    .responsive-pricing-table thead {
+        display: none;
+    }
+
+    .responsive-pricing-table tbody tr {
+        margin-block-end: 1.25rem;
+        border: 1px solid #E7E5E4 !important;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .dark .responsive-pricing-table tbody tr {
+        border-color: #374151 !important;
+    }
+
+    .responsive-pricing-table tbody th {
+        position: sticky;
+        inset-block-start: 0;
+        z-index: 2;
+        background: #F5E6D3;
+        color: #292524 !important;
+        padding: 0.75rem 1rem !important;
+    }
+
+    .dark .responsive-pricing-table tbody th {
+        background: #374151;
+        color: #F5E6D3 !important;
+    }
+
+    .responsive-pricing-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.65rem 1rem !important;
+        text-align: end !important;
+    }
+
+    .responsive-pricing-table td:nth-child(2)::before {
+        content: var(--label-2) ": " / var(--label-2);
+        font-weight: 600;
+        text-align: start;
+    }
+
+    .responsive-pricing-table td:nth-child(3)::before {
+        content: var(--label-3) ": " / var(--label-3);
+        font-weight: 600;
+        text-align: start;
+    }
+
+    .responsive-pricing-table td:nth-child(4)::before {
+        content: var(--label-4) ": " / var(--label-4);
+        font-weight: 600;
+        text-align: start;
+    }
+}
+
+.pricing-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.pricing-faq-item .faq-chevron {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.pricing-faq-item[open] .faq-chevron {
+    transform: rotate(45deg);
+}

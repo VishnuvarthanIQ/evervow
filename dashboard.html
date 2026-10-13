@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverVow - Couple Dashboard</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512x512.png?v=5">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png?v=5">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png?v=5">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48x48.png?v=5">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png?v=5">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png?v=5">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=5">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png?v=5">
+    <link rel="shortcut icon" href="favicon.ico?v=5">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            sage: '#78866B',
+                            ivory: '#FAF8F5',
+                            terracotta: '#D69C8B',
+                            charcoal: '#292524',
+                            champagne: '#F5E6D3',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css?v=41">
+</head>
+<body class="font-sans text-brand-charcoal bg-[#FAF8F5] dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div class="dashboard-layout">
+        <!-- Permanent Left Sidebar Navigation -->
+        <aside class="dashboard-sidebar offcanvas-md offcanvas-start" tabindex="-1" id="dashboardSidebar" aria-labelledby="dashboardSidebarLabel">
+            <!-- Sidebar Header -->
+            <div class="p-4 border-b border-gray-100 dark:border-gray-700/60 d-flex justify-content-between align-items-center">
+                <a class="d-flex align-items-center gap-3 text-decoration-none" href="index.html">
+                    <img src="assets/images/logo.png" alt="EverVow" class="brand-logo-img dark:hidden" style="width: 44px; height: 44px; object-fit: contain;">
+                    <img src="assets/images/logo-dark.png" alt="EverVow" class="brand-logo-img hidden dark:block" style="width: 44px; height: 44px; object-fit: contain;">
+                    <div>
+                        <span class="font-serif fw-bold text-brand-charcoal dark:text-brand-champagne d-block leading-tight text-xl">EverVow</span>
+                        <span class="text-xs uppercase tracking-wider text-brand-sage dark:text-brand-champagne font-sans font-semibold">Client Portal</span>
+                    </div>
+                </a>
+                <button type="button" class="btn-close d-md-none dark:invert" data-bs-dismiss="offcanvas" data-bs-target="#dashboardSidebar" aria-label="Close"></button>
+            </div>
+
+            <!-- Couple Profile Card -->
+            <div class="px-4 py-3 m-3 rounded-2xl bg-brand-ivory dark:bg-gray-800 border border-brand-champagne/40 dark:border-gray-700 shadow-sm">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="w-10 h-10 rounded-circle bg-brand-sage/20 dark:bg-brand-sage/40 text-brand-sage dark:text-brand-champagne font-serif font-bold d-flex align-items-center justify-content-center flex-shrink-0 text-base">
+                        E&J
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h6 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-0 truncate">Emma & James</h6>
+                        <p class="text-xs text-gray-500 dark:text-gray-300 mb-0">Oct 25, 2026 • 45 Days</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 overflow-y-auto px-3 py-2 space-y-1">
+                <p class="px-3 text-xs font-bold text-gray-400 dark:text-gray-400 uppercase tracking-wider mb-2 font-sans">Main Navigation</p>
+                
+                <a href="dashboard.html" class="dashboard-nav-link active">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="script-editor.html" class="dashboard-nav-link ">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <span>Script Editor</span>
+                    <span class="badge bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 rounded-pill ms-auto text-xs px-2 py-0.5">Draft 3</span>
+                </a>
+
+                <a href="bookings.html" class="dashboard-nav-link ">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>Consultations</span>
+                </a>
+
+                <a href="rehearsal-schedule.html" class="dashboard-nav-link ">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Rehearsals</span>
+                </a>
+
+                <hr class="my-3 border-gray-200 dark:border-gray-700">
+                
+                <p class="px-3 text-xs font-bold text-gray-400 dark:text-gray-400 uppercase tracking-wider mb-2 font-sans">Quick Links</p>
+                
+                <a href="index.html" class="dashboard-nav-link">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <span>Public Website</span>
+                </a>
+                
+                <a href="contact.html" class="dashboard-nav-link">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span>Officiant Contact</span>
+                </a>
+            </div>
+
+            <!-- Sidebar Bottom Info -->
+            <div class="p-4 border-t border-gray-100 dark:border-gray-700/60 bg-gray-50/50 dark:bg-gray-800">
+                <div class="d-flex align-items-center gap-2 text-xs text-gray-500 dark:text-gray-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Officiant: Rev. Sarah Jenkins</span>
+                </div>
+            </div>
+        </aside>
+        <div class="dashboard-main">
+            <!-- Header Topbar with Image 2 Controls (Appearance & Log Out) -->
+            <header class="dashboard-topbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-1 text-gray-600 dark:text-gray-200 shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSidebar" aria-controls="dashboardSidebar" aria-label="Toggle Sidebar">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <div class="d-flex align-items-center gap-2 text-sm text-gray-500 dark:text-gray-300 font-sans">
+                        <span class="d-none d-sm-inline">Client Portal</span>
+                        <span class="d-none d-sm-inline">/</span>
+                        <span class="text-brand-charcoal dark:text-white font-bold">Overview Dashboard</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Exact Image 2 Navigation Controls -->
+                <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <button id="themeToggle" class="btn btn-link p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors" style="width: 36px; height: 36px;" title="Toggle Theme">
+                            <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                            <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </button>
+                        <button id="dirToggle" class="btn btn-link text-decoration-none p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none font-bold text-xs bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors" style="width: 36px; height: 36px;" title="Toggle RTL/LTR">
+                            LTR
+                        </button>
+                    </div>
+
+                    <a href="login.html" class="btn btn-outline-dark dark:border-gray-500 dark:text-gray-100 rounded-pill px-3 py-1.5 text-xs font-semibold d-flex align-items-center gap-1.5 text-decoration-none shadow-none">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span>Log Out</span>
+                    </a>
+                </div>
+            </header>
+            <!-- Main Content Area -->
+            <main class="dashboard-content-area">
+                
+                <!-- Executive Greeting Banner (NO Hero Photo Background) -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm mb-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sage/10 text-brand-sage dark:text-brand-champagne text-xs font-bold uppercase tracking-wider mb-3">
+                                <span>💍 Ceremony In Planning</span>
+                            </div>
+                            <h1 class="font-serif text-3xl md:text-4xl font-bold text-brand-charcoal dark:text-white mb-2">
+                                Welcome, Emma & James
+                            </h1>
+                            <p class="text-gray-600 dark:text-gray-300 font-sans text-sm md:text-base max-w-2xl mb-0">
+                                Saturday, October 25, 2026 • St. Clair Gardens, Napa Valley • Officiated by Rev. Sarah Jenkins
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-4 border border-gray-200 dark:border-gray-600 text-center min-w-[140px] shadow-sm w-full sm:w-auto">
+                                <span class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-300 font-bold block mb-1">Countdown</span>
+                                <span class="text-3xl font-serif font-bold text-brand-charcoal dark:text-brand-champagne" id="countdownTimer">45 Days</span>
+                            </div>
+                            <a href="bookings.html" class="btn btn-primary-custom rounded-pill px-4 py-3 text-sm font-semibold shadow-sm w-full sm:w-auto text-center">
+                                + Schedule Session
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 KPI Metrics Row -->
+                <div class="row g-4 mb-8">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm h-full flex flex-col justify-between">
+                            <div class="flex justify-between items-center gap-2 mb-3">
+                                <span class="text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wide whitespace-nowrap">Script Progress</span>
+                                <span class="badge bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">Draft 3</span>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-brand-charcoal dark:text-white mb-1">75% Complete</h3>
+                                <div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2 mb-2">
+                                    <div class="bg-brand-sage h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">1,450 Words • ~24 mins speaking time</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm h-full flex flex-col justify-between">
+                            <div class="flex justify-between items-center gap-2 mb-3">
+                                <span class="text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wide whitespace-nowrap">Consultation</span>
+                                <span class="badge bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">Confirmed</span>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-charcoal dark:text-white mb-1">Final Walkthrough</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 font-semibold mb-1 flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-brand-sage dark:text-brand-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    Oct 25 at 4:00 PM
+                                </p>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Zoom Video Call with Rev. Sarah</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm h-full flex flex-col justify-between">
+                            <div class="flex justify-between items-center gap-2 mb-3">
+                                <span class="text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wide whitespace-nowrap">Rehearsal</span>
+                                <span class="badge bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">Confirmed</span>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-charcoal dark:text-white mb-1">On-Site Walkthrough</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 font-semibold mb-1 flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-brand-sage dark:text-brand-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                                    Oct 24 at 5:00 PM
+                                </p>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">14 of 16 wedding party RSVP'd</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm h-full flex flex-col justify-between">
+                            <div class="flex justify-between items-center gap-2 mb-3">
+                                <span class="text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wide whitespace-nowrap">Ceremony Ritual</span>
+                                <span class="badge bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300 text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">Selected</span>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-charcoal dark:text-white mb-1">Unity Candle</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-1">Mothers light family tapers</p>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Music cue: "Clair de Lune"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Grid: 8 Cols Left + 4 Cols Right -->
+                <div class="row g-4 mb-8">
+                    
+                    <!-- Left Column -->
+                    <div class="col-lg-8 space-y-6">
+                        
+                        <!-- Milestone Checklist Card -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <div class="flex justify-between items-center mb-6">
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-brand-charcoal dark:text-white mb-1">Ceremony Milestones</h3>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Step-by-step checklist to ensure every ceremonial detail is perfected</p>
+                                </div>
+                                <span class="text-xs font-bold py-1 px-3 rounded-full bg-brand-sage/10 text-brand-sage dark:text-brand-champagne">7 of 10 Completed</span>
+                            </div>
+
+                            <div class="space-y-3 font-sans text-sm">
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <input type="checkbox" checked class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage" disabled>
+                                    <span class="line-through text-gray-400 dark:text-gray-400 flex-1">Initial consultation & questionnaire submitted</span>
+                                    <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Done</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <input type="checkbox" checked class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage" disabled>
+                                    <span class="line-through text-gray-400 dark:text-gray-400 flex-1">Ceremony tone & style finalized (Romantic & Heartfelt)</span>
+                                    <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Done</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <input type="checkbox" checked class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage" disabled>
+                                    <span class="line-through text-gray-400 dark:text-gray-400 flex-1">First script draft reviewed & revised</span>
+                                    <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Done</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <input type="checkbox" checked class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage" disabled>
+                                    <span class="line-through text-gray-400 dark:text-gray-400 flex-1">Special reading selected ("Union" by Robert Fulghum)</span>
+                                    <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Done</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-700/60 cursor-pointer transition">
+                                    <input type="checkbox" class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage">
+                                    <span class="font-semibold text-brand-charcoal dark:text-white flex-1">Write personal wedding vows</span>
+                                    <span class="badge bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 text-xs px-2.5 py-1">In Progress</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <input type="checkbox" class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage">
+                                    <span class="text-gray-800 dark:text-gray-200 flex-1">Confirm unity ritual wording & equipment</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Pending Review</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <input type="checkbox" class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage">
+                                    <span class="text-gray-800 dark:text-gray-200 flex-1">Obtain California Marriage License from County Recorder</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Due in 20 Days</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                    <input type="checkbox" class="form-check-input w-5 h-5 text-brand-sage rounded focus:ring-brand-sage">
+                                    <span class="text-gray-800 dark:text-gray-200 flex-1">Final script sign-off with officiant</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Final Step</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 8-Step Ceremony Flow Roadmap -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <div class="flex justify-between items-center mb-6">
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-brand-charcoal dark:text-white mb-1">Ceremony Order of Service</h3>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Your customized ceremony timeline and speaking order</p>
+                                </div>
+                                <a href="script-editor.html" class="text-xs font-bold text-brand-sage dark:text-brand-champagne hover:underline">Edit Full Script →</a>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-sans">
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 01 • ~4 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">The Processional</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Seating of parents, entrance of wedding party, bridal entrance.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 02 • ~3 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">Welcome & Convocation</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Officiant welcomes family & friends, sets the romantic tone.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 03 • ~3 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">Special Reading</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">"Union" read by Sister Chloe. Celebrates everyday love.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 04 • ~5 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">The Couple's Story</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">How Emma & James met, shared values, reflections on commitment.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 05 • ~4 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">Exchange of Vows</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Declaration of Intent followed by personal written promises.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 06 • ~2 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">Ring Blessing & Exchange</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Symbol of unbroken devotion, ring words recited together.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 07 • ~3 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">Unity Candle Ritual</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">Lighting the center pillar candle, merging two families into one.</p>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <span class="text-xs font-bold text-brand-sage dark:text-brand-champagne block mb-1">Step 08 • ~2 Mins</span>
+                                    <h5 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-1">Pronouncement & Kiss</h5>
+                                    <p class="text-xs text-gray-600 dark:text-gray-300 mb-0">"You may kiss your bride!" Presentation of the newlyweds.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-lg-4 space-y-6">
+                        
+                        <!-- Assigned Officiant Card -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h4 class="font-serif text-lg font-bold text-brand-charcoal dark:text-white mb-4">Your Wedding Officiant</h4>
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-14 h-14 rounded-full bg-brand-sage/20 dark:bg-brand-sage/40 flex items-center justify-center text-brand-sage dark:text-brand-champagne font-serif font-bold text-xl flex-shrink-0">
+                                    SJ
+                                </div>
+                                <div>
+                                    <h5 class="font-serif font-bold text-base text-brand-charcoal dark:text-white mb-0">Rev. Sarah Jenkins</h5>
+                                    <p class="text-xs text-brand-sage dark:text-brand-champagne font-semibold mb-0">Certified Celebrant • 150+ Vows</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-300 mb-0">Napa & Sonoma County</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
+                                "I'm looking forward to walking through your third script draft on Thursday. Remember to have your vow drafts handy!"
+                            </p>
+                            <div class="space-y-2">
+                                <a href="bookings.html" class="btn btn-outline-dark dark:border-gray-600 dark:text-gray-100 btn-sm w-100 rounded-pill py-2 text-xs font-bold flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    Book Additional Session
+                                </a>
+                                <a href="contact.html" class="btn btn-primary-custom btn-sm w-100 rounded-pill py-2 text-xs font-bold flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    Send Direct Message
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Documents & Downloads Card -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h4 class="font-serif text-lg font-bold text-brand-charcoal dark:text-white mb-4">Ceremony Documents</h4>
+                            <div class="space-y-3 font-sans text-xs">
+                                <a href="#" class="flex items-center justify-between p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 hover:bg-gray-100 dark:hover:bg-gray-700 transition text-decoration-none text-brand-charcoal dark:text-gray-100 border border-gray-100 dark:border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                        <div>
+                                            <span class="font-bold block text-brand-charcoal dark:text-white">Ceremony_RunSheet_v3.pdf</span>
+                                            <span class="text-gray-500 dark:text-gray-300">Updated 2 days ago</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-brand-sage dark:text-brand-champagne font-bold">Download</span>
+                                </a>
+
+                                <a href="#" class="flex items-center justify-between p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 hover:bg-gray-100 dark:hover:bg-gray-700 transition text-decoration-none text-brand-charcoal dark:text-gray-100 border border-gray-100 dark:border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                        <div>
+                                            <span class="font-bold block text-brand-charcoal dark:text-white">Vow_Writing_Workbook.docx</span>
+                                            <span class="text-gray-500 dark:text-gray-300">Templates & Prompts</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-brand-sage dark:text-brand-champagne font-bold">Download</span>
+                                </a>
+
+                                <a href="#" class="flex items-center justify-between p-3 rounded-xl bg-gray-50 dark:bg-gray-900/70 hover:bg-gray-100 dark:hover:bg-gray-700 transition text-decoration-none text-brand-charcoal dark:text-gray-100 border border-gray-100 dark:border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                                        <div>
+                                            <span class="font-bold block text-brand-charcoal dark:text-white">Music_Cues_Guide.pdf</span>
+                                            <span class="text-gray-500 dark:text-gray-300">For DJ & Musicians</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-brand-sage dark:text-brand-champagne font-bold">Download</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Officiant Pro Tip of the Week -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <div class="flex items-center gap-2 mb-2 text-brand-sage dark:text-brand-champagne font-bold text-xs uppercase tracking-wider">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Officiant Tip of the Week</span>
+                            </div>
+                            <p class="text-xs text-gray-700 dark:text-gray-100 leading-relaxed mb-0">
+                                <em>"Aim for personal vows to be between 2 and 3 minutes each (around 250 to 350 words). That gives you plenty of time to be heartfelt without overwhelming the moment!"</em>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </main>
+            <!-- Compact Dashboard Footer -->
+            <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-6 py-4 text-center text-xs text-gray-500 dark:text-gray-400 font-sans">
+                <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                    <p class="mb-0">© 2026 EverVow Client Suite • Designed for Emma & James</p>
+                    <div class="flex gap-4">
+                        <a href="index.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-sage text-decoration-none">Main Site</a>
+                        <a href="contact.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-sage text-decoration-none">Officiant Support</a>
+                        <a href="login.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-sage text-decoration-none">Sign Out</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/countdown.js"></script>
+</body>
+</html>

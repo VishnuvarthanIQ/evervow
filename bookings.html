@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverVow - Officiant Consultations</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512x512.png?v=5">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png?v=5">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png?v=5">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48x48.png?v=5">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png?v=5">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png?v=5">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=5">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png?v=5">
+    <link rel="shortcut icon" href="favicon.ico?v=5">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            sage: '#78866B',
+                            ivory: '#FAF8F5',
+                            terracotta: '#D69C8B',
+                            charcoal: '#292524',
+                            champagne: '#F5E6D3',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css?v=41">
+</head>
+<body class="font-sans text-brand-charcoal bg-[#FAF8F5] dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div class="dashboard-layout">
+        <!-- Permanent Left Sidebar Navigation -->
+        <aside class="dashboard-sidebar offcanvas-md offcanvas-start" tabindex="-1" id="dashboardSidebar" aria-labelledby="dashboardSidebarLabel">
+            <!-- Sidebar Header -->
+            <div class="p-4 border-b border-gray-100 dark:border-gray-700/60 d-flex justify-content-between align-items-center">
+                <a class="d-flex align-items-center gap-3 text-decoration-none" href="index.html">
+                    <img src="assets/images/logo.png" alt="EverVow" class="brand-logo-img dark:hidden" style="width: 44px; height: 44px; object-fit: contain;">
+                    <img src="assets/images/logo-dark.png" alt="EverVow" class="brand-logo-img hidden dark:block" style="width: 44px; height: 44px; object-fit: contain;">
+                    <div>
+                        <span class="font-serif fw-bold text-brand-charcoal dark:text-brand-champagne d-block leading-tight text-xl">EverVow</span>
+                        <span class="text-xs uppercase tracking-wider text-brand-sage dark:text-brand-champagne font-sans font-semibold">Client Portal</span>
+                    </div>
+                </a>
+                <button type="button" class="btn-close d-md-none dark:invert" data-bs-dismiss="offcanvas" data-bs-target="#dashboardSidebar" aria-label="Close"></button>
+            </div>
+
+            <!-- Couple Profile Card -->
+            <div class="px-4 py-3 m-3 rounded-2xl bg-brand-ivory dark:bg-gray-800 border border-brand-champagne/40 dark:border-gray-700 shadow-sm">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="w-10 h-10 rounded-circle bg-brand-sage/20 dark:bg-brand-sage/40 text-brand-sage dark:text-brand-champagne font-serif font-bold d-flex align-items-center justify-content-center flex-shrink-0 text-base">
+                        E&J
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h6 class="font-serif font-bold text-sm text-brand-charcoal dark:text-white mb-0 truncate">Emma & James</h6>
+                        <p class="text-xs text-gray-500 dark:text-gray-300 mb-0">Oct 25, 2026 • 45 Days</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 overflow-y-auto px-3 py-2 space-y-1">
+                <p class="px-3 text-xs font-bold text-gray-400 dark:text-gray-400 uppercase tracking-wider mb-2 font-sans">Main Navigation</p>
+                
+                <a href="dashboard.html" class="dashboard-nav-link ">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="script-editor.html" class="dashboard-nav-link ">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <span>Script Editor</span>
+                    <span class="badge bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 rounded-pill ms-auto text-xs px-2 py-0.5">Draft 3</span>
+                </a>
+
+                <a href="bookings.html" class="dashboard-nav-link active">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>Consultations</span>
+                </a>
+
+                <a href="rehearsal-schedule.html" class="dashboard-nav-link ">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Rehearsals</span>
+                </a>
+
+                <hr class="my-3 border-gray-200 dark:border-gray-700">
+                
+                <p class="px-3 text-xs font-bold text-gray-400 dark:text-gray-400 uppercase tracking-wider mb-2 font-sans">Quick Links</p>
+                
+                <a href="index.html" class="dashboard-nav-link">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <span>Public Website</span>
+                </a>
+                
+                <a href="contact.html" class="dashboard-nav-link">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span>Officiant Contact</span>
+                </a>
+            </div>
+
+            <!-- Sidebar Bottom Info -->
+            <div class="p-4 border-t border-gray-100 dark:border-gray-700/60 bg-gray-50/50 dark:bg-gray-800">
+                <div class="d-flex align-items-center gap-2 text-xs text-gray-500 dark:text-gray-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Officiant: Rev. Sarah Jenkins</span>
+                </div>
+            </div>
+        </aside>
+        <div class="dashboard-main">
+            <!-- Header Topbar with Image 2 Controls (Appearance & Log Out) -->
+            <header class="dashboard-topbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-1 text-gray-600 dark:text-gray-200 shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSidebar" aria-controls="dashboardSidebar" aria-label="Toggle Sidebar">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <div class="d-flex align-items-center gap-2 text-sm text-gray-500 dark:text-gray-300 font-sans">
+                        <span class="d-none d-sm-inline">Client Portal</span>
+                        <span class="d-none d-sm-inline">/</span>
+                        <span class="text-brand-charcoal dark:text-white font-bold">Consultations & Sessions</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Exact Image 2 Navigation Controls -->
+                <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <button id="themeToggle" class="btn btn-link p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors" style="width: 36px; height: 36px;" title="Toggle Theme">
+                            <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                            <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </button>
+                        <button id="dirToggle" class="btn btn-link text-decoration-none p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none font-bold text-xs bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors" style="width: 36px; height: 36px;" title="Toggle RTL/LTR">
+                            LTR
+                        </button>
+                    </div>
+
+                    <a href="login.html" class="btn btn-outline-dark dark:border-gray-500 dark:text-gray-100 rounded-pill px-3 py-1.5 text-xs font-semibold d-flex align-items-center gap-1.5 text-decoration-none shadow-none">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span>Log Out</span>
+                    </a>
+                </div>
+            </header>
+            <!-- Main Content Area -->
+            <main class="dashboard-content-area">
+                
+                <!-- Executive Header (NO Hero Photo Background) -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm mb-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sage/10 text-brand-sage dark:text-brand-champagne text-xs font-bold uppercase tracking-wider mb-2">
+                                <span>📅 Officiant Consultations</span>
+                            </div>
+                            <h1 class="font-serif text-2xl md:text-3xl font-bold text-brand-charcoal dark:text-white mb-1">
+                                Ceremony Consultations & Meetings
+                            </h1>
+                            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300 font-sans mb-0">
+                                Meet with Rev. Sarah Jenkins to plan your script, rehearse vows, and walk through ceremonial rituals.
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="text-xs font-semibold py-2 px-3 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200">
+                                2 Completed • 1 Upcoming
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mb-8">
+                    
+                    <!-- Left: Upcoming & Scheduler (8 Cols) -->
+                    <div class="col-lg-8 space-y-6">
+                        
+                        <!-- Upcoming Meeting Feature Card -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-emerald-500/40 dark:border-emerald-600/60 shadow-sm">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="badge bg-emerald-500 text-white text-xs px-3 py-1 rounded-full font-bold">Upcoming Consultation</span>
+                                <span class="text-xs font-semibold text-gray-500 dark:text-gray-300">Duration: 45 Mins</span>
+                            </div>
+                            
+                            <h3 class="font-serif text-2xl font-bold text-brand-charcoal dark:text-white mb-2">
+                                Final Ceremony Walkthrough & Script Review
+                            </h3>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-sans text-sm mb-5">
+                                <div class="flex items-center gap-2 text-gray-800 dark:text-gray-200">
+                                    <svg class="w-5 h-5 text-brand-sage dark:text-brand-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    <span>Thursday, Oct 25, 2026</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-800 dark:text-gray-200">
+                                    <svg class="w-5 h-5 text-brand-sage dark:text-brand-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span>4:00 PM – 4:45 PM PDT</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-800 dark:text-gray-200">
+                                    <svg class="w-5 h-5 text-brand-sage dark:text-brand-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                    <span>Zoom Video Meeting</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-200 dark:border-gray-700 mb-5">
+                                <h6 class="font-serif font-bold text-xs uppercase tracking-wider text-brand-sage dark:text-brand-champagne mb-2">Meeting Agenda</h6>
+                                <ul class="list-disc list-inside text-xs text-gray-700 dark:text-gray-200 space-y-1 font-sans">
+                                    <li>Read through Draft 3 script together line-by-line</li>
+                                    <li>Practice personal vow pacing (ensure target 2-3 mins each)</li>
+                                    <li>Confirm unity candle equipment & mother seating order</li>
+                                    <li>Review marriage license legalities & signing process</li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-3">
+                                <a href="https://zoom.us" target="_blank" class="btn btn-primary-custom rounded-pill px-5 py-2 text-sm font-bold flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                    Join Zoom Meeting
+                                </a>
+                                <button class="btn btn-outline-secondary dark:border-gray-600 dark:text-gray-100 rounded-pill px-4 py-2 text-xs font-semibold">
+                                    Add to Google Calendar
+                                </button>
+                                <button class="btn btn-outline-secondary dark:border-gray-600 dark:text-gray-100 rounded-pill px-4 py-2 text-xs font-semibold">
+                                    Add to Apple Calendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Schedule New Consultation Form Card -->
+                        <div id="bookingFormCard" class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h3 class="font-serif text-xl font-bold text-brand-charcoal dark:text-white mb-2">
+                                Schedule Additional Meeting
+                            </h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-300 mb-6 font-sans">
+                                Need extra time to review vows or discuss wedding party details? Select a time that works for both of you.
+                            </p>
+
+                            <form id="bookingForm" class="space-y-4 font-sans">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-gray-200 mb-1">Session Type</label>
+                                        <select class="form-select rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm py-2.5">
+                                            <option>Ceremony Script Review (45 Mins)</option>
+                                            <option>Personal Vow Coaching (30 Mins)</option>
+                                            <option>Rehearsal Logistics Sync (30 Mins)</option>
+                                            <option>General Questions & Planning (30 Mins)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-gray-200 mb-1">Meeting Format</label>
+                                        <select class="form-select rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm py-2.5">
+                                            <option>Zoom Video Call</option>
+                                            <option>Phone Consultation</option>
+                                            <option>In-Person (Napa Valley Office)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-gray-200 mb-1">Preferred Date</label>
+                                        <input type="date" class="form-control rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm py-2.5" value="2026-10-20">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-gray-200 mb-1">Preferred Time Window</label>
+                                        <select class="form-select rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm py-2.5">
+                                            <option>Morning (10:00 AM - 12:00 PM)</option>
+                                            <option selected>Afternoon (2:00 PM - 5:00 PM)</option>
+                                            <option>Evening (5:30 PM - 7:30 PM)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-gray-200 mb-1">Topics or Questions for Rev. Sarah</label>
+                                    <textarea class="form-control rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm p-3 placeholder-gray-400 dark:placeholder-gray-400" rows="3" placeholder="Tell us what specific parts of the script or ceremony you would like to focus on..."></textarea>
+                                </div>
+
+                                <div class="flex justify-end gap-3 pt-2">
+                                    <button type="button" class="btn btn-outline-secondary dark:border-gray-600 dark:text-gray-100 rounded-pill px-4 py-2 text-xs font-bold">Clear</button>
+                                    <button type="submit" class="btn btn-primary-custom rounded-pill px-5 py-2 text-xs font-bold">Request Session</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Past History & Guidelines (4 Cols) -->
+                    <div class="col-lg-4 space-y-6">
+                        
+                        <!-- Past Consultations Archive -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h4 class="font-serif text-lg font-bold text-brand-charcoal dark:text-white mb-4">Past Sessions Archive</h4>
+                            <div class="space-y-4 font-sans text-xs">
+                                
+                                <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h6 class="font-bold text-sm text-brand-charcoal dark:text-white mb-0">Script Planning Workshop</h6>
+                                        <span class="text-emerald-600 dark:text-emerald-400 font-bold">Completed</span>
+                                    </div>
+                                    <p class="text-gray-500 dark:text-gray-300 mb-2">Sep 14, 2026 • 50 Mins</p>
+                                    <p class="text-gray-700 dark:text-gray-200 mb-3 leading-relaxed">
+                                        Discussed love story outline, confirmed unity candle ritual, and established tone as romantic yet joyful.
+                                    </p>
+                                    <a href="#" class="text-brand-sage dark:text-brand-champagne font-bold hover:underline flex items-center gap-1">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                        Download Summary Notes
+                                    </a>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-100 dark:border-gray-700">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h6 class="font-bold text-sm text-brand-charcoal dark:text-white mb-0">Initial Discovery Meeting</h6>
+                                        <span class="text-emerald-600 dark:text-emerald-400 font-bold">Completed</span>
+                                    </div>
+                                    <p class="text-gray-500 dark:text-gray-300 mb-2">Aug 02, 2026 • 40 Mins</p>
+                                    <p class="text-gray-700 dark:text-gray-200 mb-3 leading-relaxed">
+                                        Met Rev. Sarah, walked through EverVow process, reviewed couple questionnaire and ceremony vision.
+                                    </p>
+                                    <a href="#" class="text-brand-sage dark:text-brand-champagne font-bold hover:underline flex items-center gap-1">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                        Download Questionnaire PDF
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Consultation Prep Checklist -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h5 class="font-serif font-bold text-base text-brand-charcoal dark:text-white mb-3">Pre-Session Checklist</h5>
+                            <ul class="space-y-2 text-xs font-sans text-gray-700 dark:text-gray-200">
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-brand-sage dark:text-brand-champagne flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Have both partners present for video calls if possible.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-brand-sage dark:text-brand-champagne flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Review latest Draft 3 in your Script Studio before the call.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-brand-sage dark:text-brand-champagne flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Prepare any questions regarding sound equipment and microphones.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- FAQ Accordion -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                            <h5 class="font-serif font-bold text-base text-brand-charcoal dark:text-white mb-3">Common Questions</h5>
+                            <div class="space-y-3 text-xs font-sans text-gray-700 dark:text-gray-300">
+                                <div>
+                                    <strong class="text-brand-charcoal dark:text-white block mb-0.5">Can we reschedule if needed?</strong>
+                                    <span>Yes, you can reschedule up to 24 hours prior directly from this portal or by texting Rev. Sarah.</span>
+                                </div>
+                                <div class="border-t border-gray-100 dark:border-gray-700 pt-2">
+                                    <strong class="text-brand-charcoal dark:text-white block mb-0.5">Should our planner attend?</strong>
+                                    <span>Wedding planners are always welcome to join the Final Walkthrough session!</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </main>
+            <!-- Compact Dashboard Footer -->
+            <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-6 py-4 text-center text-xs text-gray-500 dark:text-gray-400 font-sans">
+                <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                    <p class="mb-0">© 2026 EverVow Client Suite • Designed for Emma & James</p>
+                    <div class="flex gap-4">
+                        <a href="index.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-sage text-decoration-none">Main Site</a>
+                        <a href="contact.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-sage text-decoration-none">Officiant Support</a>
+                        <a href="login.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-sage text-decoration-none">Sign Out</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>

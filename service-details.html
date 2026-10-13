@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverVow - Bespoke Ceremony</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512x512.png?v=5">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png?v=5">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png?v=5">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48x48.png?v=5">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png?v=5">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png?v=5">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=5">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png?v=5">
+    <link rel="shortcut icon" href="favicon.ico?v=5">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for static template) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        corePlugins: { preflight: false },
+        theme: {
+          extend: {
+            colors: { brand: { ivory: '#FAFAF9', champagne: '#F5E6D3', beige: '#E7E5E4', rose: '#C1A58D', sage: '#78866B', charcoal: '#292524' } },
+            fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Lato"', 'sans-serif'] }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css?v=41">
+</head>
+<body class="font-sans text-brand-charcoal bg-brand-ivory dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="sticky-top footer-bg z-50 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <nav class="navbar navbar-expand-lg navbar-light py-3">
+                <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none brand-logo-container" href="index.html">
+                    <img src="assets/images/logo.png" alt="EverVow" class="brand-logo-img dark:hidden" style="width: 48px; height: 48px; object-fit: contain;">
+                    <img src="assets/images/logo-dark.png" alt="EverVow" class="brand-logo-img hidden dark:block" style="width: 48px; height: 48px; object-fit: contain;">
+                    <span class="font-serif fw-bold text-brand-charcoal dark:text-brand-champagne" style="font-size: 1.5rem; letter-spacing: 0.5px;">EverVow</span>
+                </a>
+                <button class="navbar-toggler shadow-none border-0 dark:filter dark:invert" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex justify-content-lg-between" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center justify-content-center text-center gap-2 font-sans text-sm font-semibold tracking-wide">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dark:text-gray-200 hover:text-brand-sage" href="#" data-bs-toggle="dropdown">Home</a>
+                            <ul class="dropdown-menu dark:bg-gray-800 border-0 shadow-lg">
+                                <li><a class="dropdown-item dark:text-gray-200 dark:hover:bg-gray-700" href="index.html">Classic Welcome</a></li>
+                                <li><a class="dropdown-item dark:text-gray-200 dark:hover:bg-gray-700" href="home-2.html">Modern Portfolio</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link dark:text-gray-200 hover:text-brand-sage" href="about.html">About Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dark:text-gray-200 hover:text-brand-sage" href="#" data-bs-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu dark:bg-gray-800 border-0 shadow-lg">
+                                <li><a class="dropdown-item dark:text-gray-200 dark:hover:bg-gray-700" href="services.html">All Services</a></li>
+                                <li><a class="dropdown-item dark:text-gray-200 dark:hover:bg-gray-700" href="service-details.html">Service Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link dark:text-gray-200 hover:text-brand-sage" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle dark:text-gray-200 hover:text-brand-sage" href="#" data-bs-toggle="dropdown">Blog</a>
+                            <ul class="dropdown-menu dark:bg-gray-800 border-0 shadow-lg">
+                                <li><a class="dropdown-item dark:text-gray-200 dark:hover:bg-gray-700" href="blog.html">Our Blog</a></li>
+                                <li><a class="dropdown-item dark:text-gray-200 dark:hover:bg-gray-700" href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link dark:text-gray-200 hover:text-brand-sage" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link dark:text-gray-200 hover:text-brand-sage" href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center align-items-lg-center gap-4 mt-3 mt-lg-0 header-actions-container">
+                        
+                            <div class="d-flex align-items-center justify-content-center gap-3">
+                                <button id="themeToggle" class="btn btn-link p-0 text-gray-600 dark:text-gray-300 hover:text-brand-sage dark:hover:text-brand-sage shadow-none bg-gray-100 dark:bg-gray-800 rounded-circle border border-gray-200 dark:border-gray-700 d-flex align-items-center justify-content-center transition-colors" style="width: 40px; height: 40px;"><svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg><svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></button>
+                            <button id="dirToggle" class="btn btn-link text-decoration-none p-0 text-gray-600 dark:text-gray-300 hover:text-brand-sage dark:hover:text-brand-sage shadow-none font-bold text-xs bg-gray-100 dark:bg-gray-800 rounded-circle border border-gray-200 dark:border-gray-700 d-flex align-items-center justify-content-center transition-colors" style="width: 40px; height: 40px;">LTR</button>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center gap-3">
+                                <a href="login.html" class="btn bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-pill px-4 py-2 text-brand-charcoal dark:text-gray-200 hover:text-brand-sage dark:hover:text-brand-sage transition-colors font-bold text-decoration-none">Login</a>
+                            <a href="register.html" class="btn btn-primary-custom border-0 rounded-pill px-4 py-2">Register</a>
+                            </div>
+                        </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[50vh] flex items-center justify-center hero-overlay bg-cover bg-center" style="background-image: url('assets/images/The Bespoke Ceremony banner.jpg');">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="container relative z-10 text-center text-white px-4">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-white opacity-75 hover:opacity-100 text-decoration-none">Home</a></li>
+                        <li class="breadcrumb-item"><a href="services.html" class="text-white opacity-75 hover:opacity-100 text-decoration-none">Services</a></li>
+                        <li class="breadcrumb-item active text-brand-champagne" aria-current="page">Bespoke Ceremony</li>
+                    </ol>
+                </nav>
+                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4">The Bespoke Ceremony</h1>
+                <p class="text-lg md:text-xl font-sans max-w-2xl mx-auto text-gray-200">Our signature offering: a fully customized, deeply personal script written entirely from scratch.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Layout -->
+        <section class="py-16 bg-[#ffffff] dark:bg-gray-800 relative">
+            <div class="container mx-auto px-4">
+                <div class="row g-5">
+                    
+                    <!-- Left Column: Details -->
+                    <div class="col-lg-8">
+                        
+                        <!-- Overview -->
+                        <div class="mb-12">
+                            <h2 class="text-3xl font-serif font-bold text-brand-charcoal dark:text-white mb-6">Overview</h2>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">The Bespoke Ceremony is designed for couples who want their wedding to feel like an authentic reflection of their relationship. We don't use templates. We don't copy and paste from the internet. Every word is carefully chosen to tell your specific story.</p>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">This package involves a deep dive into your history, your values, and your vision for the future, resulting in a ceremony that will have your guests laughing, crying, and saying, "That was so them."</p>
+                            <img src="assets/images/The Bespoke Ceremony overview.jpg" alt="Ceremony details" class="w-full h-[400px] object-cover rounded-2xl my-8 shadow-md">
+                        </div>
+
+                        <!-- Benefits -->
+                        <div class="mb-12">
+                            <h2 class="text-3xl font-serif font-bold text-brand-charcoal dark:text-white mb-6">What's Included</h2>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="d-flex gap-3">
+                                        <div class="text-brand-sage"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                        <div>
+                                            <h4 class="font-bold dark:text-white text-lg">In-Depth Strategy Session</h4>
+                                            <p class="text-gray-600 dark:text-gray-400">A 60-minute deep dive via Zoom to outline the vibe, tone, and rituals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex gap-3">
+                                        <div class="text-brand-sage"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                        <div>
+                                            <h4 class="font-bold dark:text-white text-lg">Custom Story Questionnaire</h4>
+                                            <p class="text-gray-600 dark:text-gray-400">Detailed separate questionnaires to capture both of your unique perspectives.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex gap-3">
+                                        <div class="text-brand-sage"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                        <div>
+                                            <h4 class="font-bold dark:text-white text-lg">Unlimited Revisions</h4>
+                                            <p class="text-gray-600 dark:text-gray-400">You have complete editorial control. We tweak it until it's flawless.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex gap-3">
+                                        <div class="text-brand-sage"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                        <div>
+                                            <h4 class="font-bold dark:text-white text-lg">Vow Writing Assistance</h4>
+                                            <p class="text-gray-600 dark:text-gray-400">Review, editing, and formatting of your personal vows (printed on keepsake cards).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex gap-3">
+                                        <div class="text-brand-sage"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                        <div>
+                                            <h4 class="font-bold dark:text-white text-lg">Vendor Coordination</h4>
+                                            <p class="text-gray-600 dark:text-gray-400">We work directly with your planner, photographer, and DJ for seamless cues.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex gap-3">
+                                        <div class="text-brand-sage"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                                        <div>
+                                            <h4 class="font-bold dark:text-white text-lg">Legal Filing</h4>
+                                            <p class="text-gray-600 dark:text-gray-400">Proper execution and prompt mailing of your marriage license.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div class="mb-12 bg-brand-ivory dark:bg-gray-900 rounded-3xl p-8">
+                            <h2 class="text-3xl font-serif font-bold text-brand-charcoal dark:text-white mb-8">The Timeline</h2>
+                            <div class="relative border-l-2 border-brand-champagne ml-4 space-y-8 pb-4">
+                                <div class="relative pl-8">
+                                    <div class="absolute w-4 h-4 bg-brand-sage rounded-full -left-[9px] top-1"></div>
+                                    <h4 class="font-bold text-lg dark:text-white">6-9 Months Out</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-0">Initial consultation, contract signing, and retainer paid to secure your date.</p>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute w-4 h-4 bg-brand-sage rounded-full -left-[9px] top-1"></div>
+                                    <h4 class="font-bold text-lg dark:text-white">3-4 Months Out</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-0">Questionnaires are sent out. We schedule our deep-dive strategy session.</p>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute w-4 h-4 bg-brand-sage rounded-full -left-[9px] top-1"></div>
+                                    <h4 class="font-bold text-lg dark:text-white">1-2 Months Out</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-0">First draft of the ceremony is delivered. Revisions begin. Personal vows are reviewed.</p>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute w-4 h-4 bg-brand-sage rounded-full -left-[9px] top-1"></div>
+                                    <h4 class="font-bold text-lg dark:text-white">2 Weeks Out</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-0">Final script approval. Coordination emails sent to vendor team.</p>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute w-4 h-4 bg-brand-sage rounded-full -left-[9px] top-1"></div>
+                                    <h4 class="font-bold text-lg dark:text-white">Wedding Day</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-0">I arrive early to check in with vendors, deliver your vows, and rock your ceremony.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQs -->
+                        <div class="mb-12">
+                            <h2 class="text-3xl font-serif font-bold text-brand-charcoal dark:text-white mb-6">Service FAQs</h2>
+                            <div class="accordion" id="specificFaq">
+                                <div class="accordion-item bg-transparent border-0 border-b border-gray-200 dark:border-gray-700 rounded-0 mb-4">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed bg-transparent text-brand-charcoal dark:text-white font-bold shadow-none px-0 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                            Can we include religious or cultural traditions?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#specificFaq">
+                                        <div class="accordion-body px-0 text-gray-600 dark:text-gray-400 pb-4">
+                                            Absolutely. While we specialize in modern, secular, and interfaith ceremonies, we are happy to weave in any traditions, prayers, or rituals that are meaningful to you and your families.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0 border-b border-gray-200 dark:border-gray-700 rounded-0 mb-4">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed bg-transparent text-brand-charcoal dark:text-white font-bold shadow-none px-0 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                            How long will the ceremony last?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#specificFaq">
+                                        <div class="accordion-body px-0 text-gray-600 dark:text-gray-400 pb-4">
+                                            The sweet spot for a bespoke ceremony is typically between 20 and 25 minutes. This is long enough to tell a substantive story and include readings/rituals, but short enough to keep your guests entirely engaged.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Right Column: Sticky Booking / Pricing -->
+                    <div class="col-lg-4 sidebar">
+                        <div class="sticky top-28 bg-[#ffffff] dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                            <h3 class="font-serif text-2xl font-bold dark:text-white mb-2">Bespoke Ceremony</h3>
+                            <div class="text-3xl font-bold text-brand-sage mb-4">$850</div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">A 50% retainer is required to secure your date, with the balance due 30 days prior to the wedding.</p>
+                            
+                            <h4 class="font-bold text-sm uppercase tracking-wider text-brand-charcoal dark:text-white mb-4">Available Add-ons</h4>
+                            <ul class="space-y-3 mb-8 text-sm text-gray-600 dark:text-gray-300">
+                                <li class="flex justify-between items-center">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input type="checkbox" class="accent-brand-sage w-4 h-4 rounded"> Rehearsal Attendance
+                                    </label>
+                                    <span>+$150</span>
+                                </li>
+                                <li class="flex justify-between items-center">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input type="checkbox" class="accent-brand-sage w-4 h-4 rounded"> Bilingual Translation (Full)
+                                    </label>
+                                    <span>+$250</span>
+                                </li>
+                                <li class="flex justify-between items-center">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input type="checkbox" class="accent-brand-sage w-4 h-4 rounded"> Travel Fee (Outside 50mi)
+                                    </label>
+                                    <span>Varies</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="contact.html?service=bespoke" class="btn btn-primary-custom border-0 rounded-pill w-full py-4 font-bold uppercase tracking-wider transition-transform hover:-translate-y-1 mb-3">Inquire for Availability</a>
+                            <p class="text-center text-xs text-gray-400 mb-0">No commitment required to inquire.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+        <!-- Footer -->
+                <footer class="footer-bg text-brand-charcoal dark:text-gray-100 pt-20 pb-8 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <div class="row g-5 mb-8">
+                <!-- Brand Column -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="d-flex align-items-center mb-4" style="height: 40px;">
+                        <a class="brand-logo-link d-flex align-items-center gap-2 text-decoration-none brand-logo-container" href="index.html">
+                            <img src="assets/images/logo.png" alt="EverVow" class="brand-logo-img dark:hidden" style="width: 48px; height: 48px; object-fit: contain;">
+                    <img src="assets/images/logo-dark.png" alt="EverVow" class="brand-logo-img hidden dark:block" style="width: 48px; height: 48px; object-fit: contain;">
+                            <span class="font-serif fw-bold text-brand-charcoal dark:text-brand-champagne" style="font-size: 1.6rem; letter-spacing: 0.5px;">EverVow</span>
+                        </a>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 font-sans text-sm mb-8 leading-relaxed pr-lg-4">Crafting unforgettable, personalized wedding ceremonies that tell your unique love story with warmth and elegance.</p>
+                    <div class="d-flex gap-4">
+                        <a href="https://www.instagram.com/evervow" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-charcoal dark:hover:text-white transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.pinterest.com/evervow" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-charcoal dark:hover:text-white transition-colors" aria-label="Pinterest">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/evervow" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-charcoal dark:hover:text-white transition-colors" aria-label="Facebook">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://twitter.com/evervow" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-charcoal dark:hover:text-white transition-colors" aria-label="X (Twitter)">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Explore Column -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="d-flex align-items-center mb-4" style="height: 40px;">
+                        <h4 class="text-sm fw-bold tracking-widest uppercase mb-0 text-brand-charcoal dark:text-brand-champagne">Explore</h4>
+                    </div>
+                    <ul class="list-unstyled font-sans text-sm space-y-3 p-0 m-0">
+                        <li><a href="index.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Classic Welcome</a></li>
+                        <li><a href="home-2.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Modern Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">About Us</a></li>
+                        <li><a href="pricing.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Column -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="d-flex align-items-center mb-4" style="height: 40px;">
+                        <h4 class="text-sm fw-bold tracking-widest uppercase mb-0 text-brand-charcoal dark:text-brand-champagne">Offerings</h4>
+                    </div>
+                    <ul class="list-unstyled font-sans text-sm space-y-3 p-0 m-0">
+                        <li><a href="services.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Our Services</a></li>
+                        <li><a href="service-details.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Service Details</a></li>
+                        <li><a href="blog.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Journal</a></li>
+                        <li><a href="blog-details.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Journal Details</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div class="col-lg-4 col-md-4">
+                    <div class="d-flex align-items-center mb-4" style="height: 40px;">
+                        <h4 class="text-sm fw-bold tracking-widest uppercase mb-0 text-brand-charcoal dark:text-brand-champagne">Stay Connected</h4>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 font-sans text-sm mb-4">Subscribe for elegant wedding inspiration and exclusive offers.</p>
+                    
+                    <form class="d-flex align-items-center pb-2 mb-4 footer-newsletter-form" id="footerNewsletterForm" novalidate>
+                        <input type="email" class="form-control border-0 bg-transparent px-0 text-brand-charcoal dark:text-white shadow-none font-sans text-sm focus:ring-0" placeholder="Email address" required style="outline: none; box-shadow: none;">
+                        <button class="btn p-0 border-0 bg-transparent text-brand-charcoal dark:text-brand-champagne hover:text-brand-sage transition-colors d-flex align-items-center gap-2" type="submit">
+                            <span class="font-serif fw-bold text-uppercase tracking-wider text-xs">Subscribe</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </form>
+                    
+                    <div class="invalid-feedback text-brand-rose mt-2 hidden text-sm" id="footerNewsletterError">Valid email required.</div>
+                    <div class="valid-feedback text-brand-sage mt-2 hidden text-sm" id="footerNewsletterSuccess">Thank you!</div>
+                    
+                    <ul class="list-unstyled font-sans text-sm d-flex gap-4 mt-4 p-0 m-0">
+                        <li><a href="login.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Login</a></li>
+                        <li><a href="register.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Register</a></li>
+                        <li><a href="contact.html" class="text-gray-600 dark:text-gray-400 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="row pt-4 mt-5 border-top border-gray-200 dark:border-gray-800">
+                <div class="col-12 text-center">
+                    <p class="text-gray-500 dark:text-gray-400 font-sans text-sm mb-0">&copy; 2024 EverVow. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js?v=9"></script>
+</body>
+</html>
