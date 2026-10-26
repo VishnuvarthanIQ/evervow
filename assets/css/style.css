@@ -238,6 +238,7 @@ section[class*="min-h-"] a.btn,
   letter-spacing: 0.02em;
   color: #292524 !important;
   position: relative;
+  white-space: nowrap !important;
 }
 
 .dark .navbar-nav .nav-link {
@@ -414,11 +415,6 @@ textarea:focus {
   box-shadow: 0 0 0 0.25rem rgba(178, 172, 136, 0.25);
 }
 
-/* Dashboard Sidebar */
-.dashboard-sidebar {
-  min-height: calc(100vh - 80px);
-}
-
 /* Fix Tailwind and Bootstrap .collapse conflict */
 .collapse {
     visibility: visible !important;
@@ -446,7 +442,7 @@ textarea:focus {
 }
 
 /* Sidebar/Sticky Overflow */
-.sidebar, .dashboard-sidebar {
+.sidebar {
     top: 80px;
     position: sticky;
     z-index: 40;
@@ -714,6 +710,145 @@ footer ul.list-unstyled a:hover,
 }
 
 /* ==========================================================================
+   Desktop Navbar Alignment & High-DPI / Edge Browser Responsive Fix
+   ========================================================================== */
+
+/* Desktop Navigation Layout (min-width: 992px) */
+@media (min-width: 992px) {
+  .navbar {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  .navbar-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    margin-right: 1.25rem !important;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .navbar-nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0.45rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .navbar-nav .nav-item {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .navbar-nav .nav-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    padding: 0.5rem 0.65rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .header-actions-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+    gap: 0.85rem !important;
+    margin-top: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .header-actions-container > div {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+    gap: 0.6rem !important;
+    width: auto !important;
+  }
+
+  .header-actions-container .btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.25 !important;
+  }
+
+  .header-actions-container a[href="login.html"],
+  .header-actions-container a[href="register.html"] {
+    height: 40px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Medium Desktop & Constrained Viewports (992px to 1240px, e.g. Edge with Sidebar / 125% Display Scaling) */
+@media (min-width: 992px) and (max-width: 1240px) {
+  header .container {
+    max-width: 100% !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .navbar-brand {
+    margin-right: 0.5rem !important;
+  }
+
+  .navbar-brand .brand-logo-img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .navbar-brand span {
+    font-size: 1.25rem !important;
+  }
+
+  .navbar-nav {
+    gap: 0.15rem !important;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.85rem !important;
+    padding: 0.35rem 0.4rem !important;
+  }
+
+  .header-actions-container {
+    gap: 0.5rem !important;
+  }
+
+  .header-actions-container > div {
+    gap: 0.35rem !important;
+  }
+
+  .header-actions-container #themeToggle,
+  .header-actions-container #dirToggle {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  .header-actions-container a.btn {
+    padding: 0.35rem 0.75rem !important;
+    font-size: 0.85rem !important;
+    height: 36px !important;
+  }
+}
+
+/* ==========================================================================
    Dashboard Sidebar & Portal Layout
    ========================================================================== */
 .dashboard-layout {
@@ -735,8 +870,16 @@ footer ul.list-unstyled a:hover,
     height: 100vh;
     position: sticky;
     top: 0;
-    z-index: 1030;
+    z-index: 1020;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ensure offcanvas sidebar sits ABOVE the backdrop (1040) so all items are 100% clickable */
+.dashboard-sidebar.offcanvas,
+.dashboard-sidebar.offcanvas-lg,
+.dashboard-sidebar.offcanvas-md,
+.dashboard-sidebar[class*="offcanvas"] {
+    z-index: 1050 !important;
 }
 .dark .dashboard-sidebar {
     background-color: #1F2937; /* gray-800 */
@@ -806,14 +949,23 @@ footer ul.list-unstyled a:hover,
     flex: 1;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
     .dashboard-layout {
         flex-direction: column;
     }
     .dashboard-sidebar {
         height: 100%;
         position: fixed;
+        z-index: 1050 !important;
     }
+    .dashboard-topbar {
+        padding: 0.85rem 1.25rem;
+    }
+    .dashboard-content-area {
+        padding: 1.5rem 1.25rem;
+    }
+}
+@media (max-width: 639.98px) {
     .dashboard-content-area {
         padding: 1.25rem 1rem;
     }
@@ -1197,4 +1349,309 @@ section[class*="min-h-"] .animate-on-scroll {
 
 .pricing-faq-item[open] .faq-chevron {
     transform: rotate(45deg);
+}
+
+/* Card Uniform Horizontal Alignment System (Home 2) */
+.ceremony-card-title {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.ceremony-card-desc {
+    min-height: 4.8rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.package-card-title {
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.package-card-badge {
+    min-height: 1.25rem;
+    display: block;
+}
+
+.package-price-wrap {
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Service Cards Uniform Horizontal Alignment System */
+.service-item .card-title {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-item .card-text {
+    min-height: 5.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Calculator Summary Amount Alignment */
+.calc-amount-col {
+    display: inline-block;
+    min-width: 105px;
+    text-align: left;
+}
+
+/* Pricing Page Cards Uniform Horizontal Alignment System */
+.pricing-card .pricing-badge-pill {
+    min-height: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-card .pricing-card-title {
+    min-height: 4.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.25;
+}
+
+.pricing-card .pricing-price-wrap {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-card .pricing-card-sub {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-card .pricing-card-desc {
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .pricing-card {
+        padding: 1.5rem 1.25rem !important;
+    }
+    .pricing-card ul.list-unstyled {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    .pricing-card ul.list-unstyled li {
+        min-height: 3.5rem !important;
+        max-height: 3.5rem !important;
+        font-size: 0.8125rem !important;
+        line-height: 1.35 !important;
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pricing-card {
+        padding: 2rem !important;
+    }
+    .pricing-card ul.list-unstyled li {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Specialty & Standalone Services Cards Alignment */
+.specialty-card-header {
+    min-height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.specialty-card-desc {
+    min-height: 5.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* The EverVow Promise Cards Alignment */
+.promise-card-title {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.promise-card-desc {
+    min-height: 5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* How Booking & Payments Work Alignment */
+.booking-step-title {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.booking-step-badge {
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.booking-step-desc {
+    min-height: 5.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Enhanced Badge & Pill Padding */
+.badge.rounded-full,
+.badge.rounded-pill {
+    padding: 0.35rem 0.8rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025em;
+}
+
+/* Stable Scrollbar Gutter to prevent layout jerk on offcanvas toggle */
+html {
+    scrollbar-gutter: stable;
+}
+
+/* Dashboard Topbar 360px & Mobile Responsiveness */
+@media (max-width: 480px) {
+    .dashboard-topbar {
+        padding: 0.65rem 0.75rem !important;
+    }
+    .dashboard-content-area {
+        padding: 1rem 0.75rem !important;
+    }
+}
+
+/* Eliminate Hard / Harsh Scrollbars on Dashboard Sidebar & Navigation */
+.dashboard-sidebar {
+    overflow-x: hidden !important;
+}
+
+.dashboard-sidebar .overflow-y-auto {
+    overflow-x: hidden !important;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 134, 107, 0.25) transparent;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(120, 134, 107, 0.25);
+    border-radius: 9999px;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(120, 134, 107, 0.5);
+}
+
+/* Sleek custom scrollbar for sidebar navigation (replaces hard/clunky scrollbars) */
+.dashboard-sidebar .overflow-y-auto {
+    overflow-x: hidden !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(120, 134, 107, 0.35) transparent !important;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar {
+    width: 4px !important;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(120, 134, 107, 0.35) !important;
+    border-radius: 10px !important;
+}
+
+.dark .dashboard-sidebar .overflow-y-auto {
+    scrollbar-color: rgba(245, 230, 211, 0.35) transparent !important;
+}
+
+.dark .dashboard-sidebar .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(245, 230, 211, 0.35) !important;
+}
+
+/* ==========================================================================
+   Auth Forms Enhanced Visibility & Social Login Buttons
+   ========================================================================== */
+.auth-form-card {
+    background-color: #FFFFFF !important;
+    border: 1px solid rgba(209, 213, 219, 0.85) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+.dark .auth-form-card {
+    background-color: #1F2937 !important;
+    border: 1px solid rgba(75, 85, 99, 0.85) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.auth-form-card .form-control {
+    background-color: #FFFFFF !important;
+    border: 1px solid #D1D5DB !important;
+    color: #111827 !important;
+}
+
+.dark .auth-form-card .form-control {
+    background-color: #374151 !important;
+    border: 1px solid #4B5563 !important;
+    color: #F9FAFB !important;
+}
+
+.auth-form-card .form-control:focus {
+    border-color: #78866B !important;
+    box-shadow: 0 0 0 3px rgba(120, 134, 107, 0.25) !important;
+}
+
+.dark .auth-form-card .form-control:focus {
+    border-color: #F5E6D3 !important;
+    box-shadow: 0 0 0 3px rgba(245, 230, 211, 0.25) !important;
+}
+
+.auth-social-btn {
+    transition: all 0.2s ease !important;
+}
+
+.auth-social-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

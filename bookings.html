@@ -47,12 +47,12 @@
     </script>
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=42">
+    <link rel="stylesheet" href="assets/css/style.css?v=46">
 </head>
 <body class="font-sans text-brand-charcoal bg-[#FAF8F5] dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
     <div class="dashboard-layout">
         <!-- Permanent Left Sidebar Navigation -->
-        <aside class="dashboard-sidebar offcanvas-md offcanvas-start" tabindex="-1" id="dashboardSidebar" aria-labelledby="dashboardSidebarLabel">
+        <aside class="dashboard-sidebar offcanvas-lg offcanvas-start" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="dashboardSidebar" aria-labelledby="dashboardSidebarLabel">
             <!-- Sidebar Header -->
             <div class="p-4 border-b border-gray-100 dark:border-gray-700/60 d-flex justify-content-between align-items-center">
                 <a class="d-flex align-items-center gap-3 text-decoration-none" href="index.html">
@@ -63,7 +63,7 @@
                         <span class="text-xs uppercase tracking-wider text-brand-sage dark:text-brand-champagne font-sans font-semibold">Client Portal</span>
                     </div>
                 </a>
-                <button type="button" class="btn-close d-md-none dark:invert" data-bs-dismiss="offcanvas" data-bs-target="#dashboardSidebar" aria-label="Close"></button>
+                <button type="button" class="btn-close d-lg-none dark:invert" data-bs-dismiss="offcanvas" data-bs-target="#dashboardSidebar" aria-label="Close"></button>
             </div>
 
             <!-- Couple Profile Card -->
@@ -130,32 +130,32 @@
         <div class="dashboard-main">
             <!-- Header Topbar with Image 2 Controls (Appearance & Log Out) -->
             <header class="dashboard-topbar">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link p-1 text-gray-600 dark:text-gray-200 shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSidebar" aria-controls="dashboardSidebar" aria-label="Toggle Sidebar">
+                <div class="d-flex align-items-center gap-2 gap-sm-3 min-w-0">
+                    <button class="btn btn-link p-1 text-gray-600 dark:text-gray-200 shadow-none border-0 d-lg-none flex-shrink-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSidebar" aria-controls="dashboardSidebar" aria-label="Toggle Sidebar">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
-                    <div class="d-flex align-items-center gap-2 text-sm text-gray-500 dark:text-gray-300 font-sans">
-                        <span class="d-none d-sm-inline">Client Portal</span>
-                        <span class="d-none d-sm-inline">/</span>
-                        <span class="text-brand-charcoal dark:text-white font-bold">Consultations & Sessions</span>
+                    <div class="d-flex align-items-center gap-1.5 gap-sm-2 text-xs sm:text-sm text-gray-500 dark:text-gray-300 font-sans min-w-0">
+                        <span class="d-none d-md-inline whitespace-nowrap">Client Portal</span>
+                        <span class="d-none d-md-inline">/</span>
+                        <span class="text-brand-charcoal dark:text-white font-bold truncate">Consultations & Sessions</span>
                     </div>
                 </div>
 
-                <!-- Right Side: Exact Image 2 Navigation Controls -->
-                <div class="d-flex align-items-center gap-3">
-                    <div class="d-flex align-items-center gap-2">
-                        <button id="themeToggle" class="btn btn-link p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors" style="width: 36px; height: 36px;" title="Toggle Theme">
+                <!-- Right Side Navigation Controls -->
+                <div class="d-flex align-items-center gap-1.5 gap-sm-3 flex-shrink-0">
+                    <div class="d-flex align-items-center gap-1.5 gap-sm-2">
+                        <button id="themeToggle" class="btn btn-link p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors flex-shrink-0" style="width: 32px; height: 32px;" title="Toggle Theme">
                             <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                             <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         </button>
-                        <button id="dirToggle" class="btn btn-link text-decoration-none p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none font-bold text-xs bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors" style="width: 36px; height: 36px;" title="Toggle RTL/LTR">
+                        <button id="dirToggle" class="btn btn-link text-decoration-none p-0 text-gray-700 dark:text-gray-200 hover:text-brand-sage shadow-none font-bold text-xs bg-gray-100 dark:bg-gray-700 rounded-circle border border-gray-200 dark:border-gray-600 d-flex align-items-center justify-content-center transition-colors flex-shrink-0" style="width: 32px; height: 32px;" title="Toggle RTL/LTR">
                             LTR
                         </button>
                     </div>
 
-                    <a href="login.html" class="btn btn-outline-dark dark:border-gray-500 dark:text-gray-100 rounded-pill px-3 py-1.5 text-xs font-semibold d-flex align-items-center gap-1.5 text-decoration-none shadow-none">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                        <span>Log Out</span>
+                    <a href="login.html" class="btn btn-outline-dark dark:border-gray-500 dark:text-gray-100 rounded-pill px-2.5 sm:px-3 py-1.5 text-xs font-semibold d-inline-flex align-items-center gap-1.5 text-decoration-none shadow-none whitespace-nowrap text-nowrap flex-shrink-0">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span class="whitespace-nowrap text-nowrap">Log Out</span>
                     </a>
                 </div>
             </header>

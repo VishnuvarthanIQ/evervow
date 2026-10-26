@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Newsletter validation demo
     const forms = document.querySelectorAll('form[novalidate]');
     forms.forEach(form => {
+        // Skip auth forms (login and register) as they manage their own validation lifecycle
+        if (form.id === 'registerForm' || form.id === 'loginForm') {
+            return;
+        }
         form.addEventListener('submit', event => {
             event.preventDefault();
             if (!form.checkValidity()) {
