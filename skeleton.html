@@ -87,9 +87,19 @@
                                 <button id="themeToggle" class="btn btn-link p-0 text-gray-600 dark:text-gray-300 hover:text-brand-sage dark:hover:text-brand-sage shadow-none bg-gray-100 dark:bg-gray-800 rounded-circle border border-gray-200 dark:border-gray-700 d-flex align-items-center justify-content-center transition-colors" style="width: 40px; height: 40px;"><svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg><svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></button>
                             <button id="dirToggle" class="btn btn-link text-decoration-none p-0 text-gray-600 dark:text-gray-300 hover:text-brand-sage dark:hover:text-brand-sage shadow-none font-bold text-xs bg-gray-100 dark:bg-gray-800 rounded-circle border border-gray-200 dark:border-gray-700 d-flex align-items-center justify-content-center transition-colors" style="width: 40px; height: 40px;">LTR</button>
                             </div>
-                            <div class="d-flex align-items-center justify-content-center gap-3">
-                                <a href="login.html" class="btn bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-pill px-4 py-2 text-brand-charcoal dark:text-gray-200 hover:text-brand-sage dark:hover:text-brand-sage transition-colors font-bold text-decoration-none">Login</a>
-                            <a href="register.html" class="btn btn-primary-custom border-0 rounded-pill px-4 py-2">Register</a>
+                            <div class="header-auth-container d-flex align-items-center justify-content-center">
+                                <a href="login.html" class="btn btn-primary-custom border-0 rounded-pill px-4 py-2 text-decoration-none font-bold header-signin-btn" id="headerSignInBtn">Sign In</a>
+                                <div class="header-user-menu d-none align-items-center gap-2" id="headerUserMenu">
+                                    <div class="header-user-chip d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm transition-all">
+                                        <span class="header-user-avatar d-inline-flex align-items-center justify-content-center rounded-circle bg-brand-sage text-white font-bold text-xs flex-shrink-0" id="headerUserAvatar" style="width: 22px; height: 22px; font-size: 0.725rem;">G</span>
+                                        <span class="header-username font-semibold text-brand-charcoal dark:text-brand-champagne text-xs sm:text-sm truncate max-w-[140px] sm:max-w-[180px]" id="headerUserName"></span>
+                                    </div>
+                                    <span class="header-auth-divider text-gray-300 dark:text-gray-600 user-select-none font-light">|</span>
+                                    <button type="button" class="btn header-logout-btn rounded-pill px-3 py-1.5 text-xs sm:text-sm font-semibold d-inline-flex align-items-center gap-1.5 transition-all shadow-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-300 dark:hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/30" id="headerLogoutBtn">
+                                        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                        <span>Logout</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                 </div>
@@ -207,6 +217,7 @@
     <script src="assets/js/theme.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js?v=9"></script>
+    <script src="assets/js/auth.js?v=3"></script>
     <!-- Add page-specific scripts here -->
 </body>
 </html>

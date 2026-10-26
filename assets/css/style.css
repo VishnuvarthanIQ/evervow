@@ -787,9 +787,11 @@ footer ul.list-unstyled a:hover,
     line-height: 1.25 !important;
   }
 
-  .header-actions-container a[href="login.html"],
-  .header-actions-container a[href="register.html"] {
-    height: 40px !important;
+  .header-actions-container a[href="login.html"]:not(.d-none),
+  .header-actions-container a[href="register.html"]:not(.d-none),
+  .header-actions-container .header-signin-btn:not(.d-none),
+  .header-actions-container .header-user-menu:not(.d-none) {
+    min-height: 40px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -848,6 +850,236 @@ footer ul.list-unstyled a:hover,
   }
 }
 
+/* ==========================================================================
+   Header Authentication & User State Styles
+   ========================================================================== */
+.header-auth-container {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Strict display rules to guarantee no overlap between Sign In and User Menu */
+.header-signin-btn.d-none,
+.header-actions-container .header-signin-btn.d-none,
+.header-actions-container a[href="login.html"].d-none,
+.header-user-menu.d-none,
+.header-actions-container .header-user-menu.d-none {
+    display: none !important;
+}
+
+.header-user-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    white-space: nowrap !important;
+    height: 38px !important;
+}
+
+/* Clear, Stylish, Perfectly Sized User Chip (Matches Logout Button Height & Padding) */
+.header-user-chip {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    box-sizing: border-box !important;
+    padding: 0 0.85rem 0 0.5rem !important;
+    border-radius: 9999px !important;
+    background-color: #ffffff !important;
+    border: 1.5px solid #292524 !important;
+    color: #1c1917 !important;
+    box-shadow: 0 2px 8px -2px rgba(41, 37, 36, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+}
+
+.dark .header-user-chip {
+    background-color: #1f2937 !important;
+    border: 1.5px solid #F5E6D3 !important;
+    color: #F5E6D3 !important;
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.45) !important;
+}
+
+.header-user-chip:hover {
+    border-color: #78866B !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px -2px rgba(120, 134, 107, 0.3) !important;
+}
+
+.dark .header-user-chip:hover {
+    border-color: #ffffff !important;
+    box-shadow: 0 4px 12px -2px rgba(245, 230, 211, 0.25) !important;
+}
+
+.header-user-avatar {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #78866B 0%, #4f5a44 100%) !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.725rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    flex-shrink: 0 !important;
+}
+
+.dark .header-user-avatar {
+    background: linear-gradient(135deg, #a3b18a 0%, #78866B 100%) !important;
+    border-color: #1f2937 !important;
+    color: #111827 !important;
+}
+
+/* Matching font size & weight to Logout text */
+.header-username {
+    font-weight: 700 !important;
+    font-size: 0.875rem !important;
+    line-height: 1 !important;
+    color: #1c1917 !important;
+    max-width: 140px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    letter-spacing: 0.015em !important;
+    text-transform: capitalize !important;
+}
+
+.dark .header-username {
+    color: #ffffff !important;
+}
+
+/* Distinct Vertical Divider (Vertically Aligned with Both Badges) */
+.header-auth-divider {
+    color: #94a3b8 !important;
+    font-size: 1.15rem !important;
+    font-weight: 300 !important;
+    margin: 0 0.15rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 38px !important;
+    line-height: 1 !important;
+    user-select: none !important;
+}
+
+.dark .header-auth-divider {
+    color: #64748b !important;
+}
+
+/* Matching Logout Button (Identical 38px Height & Harmonious Padding) */
+.header-logout-btn {
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    box-sizing: border-box !important;
+    padding: 0 0.95rem 0 0.75rem !important;
+    border-radius: 9999px !important;
+    font-weight: 700 !important;
+    font-size: 0.875rem !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    border: 1.5px solid #dc2626 !important;
+    background-color: #ffffff !important;
+    color: #dc2626 !important;
+    box-shadow: 0 2px 6px -1px rgba(220, 38, 38, 0.15) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    vertical-align: middle !important;
+}
+
+.header-logout-btn svg {
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    stroke-width: 2.2 !important;
+    flex-shrink: 0 !important;
+}
+
+.dark .header-logout-btn {
+    border-color: #ef4444 !important;
+    background-color: rgba(220, 38, 38, 0.15) !important;
+    color: #fca5a5 !important;
+    box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header-logout-btn:hover {
+    color: #ffffff !important;
+    border-color: #dc2626 !important;
+    background-color: #dc2626 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 16px -2px rgba(220, 38, 38, 0.35) !important;
+}
+
+.dark .header-logout-btn:hover {
+    color: #ffffff !important;
+    border-color: #ef4444 !important;
+    background-color: #ef4444 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 16px -2px rgba(239, 68, 68, 0.45) !important;
+}
+
+.header-logout-btn:active {
+    transform: translateY(0) scale(0.97) !important;
+}
+
+/* Mobile Responsiveness for Header Auth */
+@media (max-width: 575.98px) {
+    .header-user-menu {
+        gap: 0.35rem !important;
+        height: 34px !important;
+    }
+    .header-user-chip {
+        height: 34px !important;
+        min-height: 34px !important;
+        max-height: 34px !important;
+        padding: 0 0.65rem 0 0.4rem !important;
+        gap: 0.35rem !important;
+    }
+    .header-user-avatar {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        font-size: 0.65rem !important;
+    }
+    .header-username {
+        max-width: 85px !important;
+        font-size: 0.8rem !important;
+    }
+    .header-logout-btn {
+        height: 34px !important;
+        min-height: 34px !important;
+        max-height: 34px !important;
+        padding: 0 0.75rem 0 0.6rem !important;
+        font-size: 0.8rem !important;
+        gap: 0.35rem !important;
+    }
+    .header-logout-btn svg {
+        width: 13px !important;
+        height: 13px !important;
+        min-width: 13px !important;
+    }
+    .header-auth-divider {
+        height: 34px !important;
+        font-size: 0.95rem !important;
+        margin: 0 !important;
+    }
+}
 /* ==========================================================================
    Dashboard Sidebar & Portal Layout
    ========================================================================== */
@@ -923,6 +1155,28 @@ footer ul.list-unstyled a:hover,
     color: #F5E6D3; /* brand-champagne */
 }
 
+/* Sidebar Header - Perfectly aligned in height, padding, and border with Dashboard Topbar */
+.dashboard-sidebar-header {
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    box-sizing: border-box !important;
+    padding: 0 1.5rem !important;
+    border-bottom: 1px solid #E5E7EB !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.dark .dashboard-sidebar-header {
+    border-color: #374151 !important;
+}
+
+.dashboard-sidebar-header .brand-logo-img {
+    width: 42px !important;
+    height: 42px !important;
+}
+
 .dashboard-main {
     flex: 1;
     min-width: 0;
@@ -931,13 +1185,18 @@ footer ul.list-unstyled a:hover,
     min-height: 100vh;
 }
 
+/* Dashboard Topbar - Identical 80px height and border alignment */
 .dashboard-topbar {
     background-color: #FFFFFF;
-    border-bottom: 1px solid #E5E7EB;
-    padding: 0.85rem 1.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-bottom: 1px solid #E5E7EB !important;
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    box-sizing: border-box !important;
+    padding: 0 1.75rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -958,8 +1217,17 @@ footer ul.list-unstyled a:hover,
         position: fixed;
         z-index: 1050 !important;
     }
+    .dashboard-sidebar-header {
+        height: 64px !important;
+        min-height: 64px !important;
+        max-height: 64px !important;
+        padding: 0 1.25rem !important;
+    }
     .dashboard-topbar {
-        padding: 0.85rem 1.25rem;
+        height: 64px !important;
+        min-height: 64px !important;
+        max-height: 64px !important;
+        padding: 0 1.25rem !important;
     }
     .dashboard-content-area {
         padding: 1.5rem 1.25rem;
