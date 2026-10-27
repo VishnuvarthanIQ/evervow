@@ -239,6 +239,9 @@ section[class*="min-h-"] a.btn,
   color: #292524 !important;
   position: relative;
   white-space: nowrap !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .dark .navbar-nav .nav-link {
@@ -246,25 +249,61 @@ section[class*="min-h-"] a.btn,
 }
 
 .navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:focus-visible,
+.navbar-nav .nav-link:active {
   color: #78866B !important;
   opacity: 1;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .dark .navbar-nav .nav-link:hover,
-.dark .navbar-nav .nav-link:focus {
+.dark .navbar-nav .nav-link:focus,
+.dark .navbar-nav .nav-link:focus-visible,
+.dark .navbar-nav .nav-link:active {
   color: #F5E6D3 !important;
   opacity: 1;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .navbar-nav .nav-link.active-nav-link {
   color: #78866B !important;
   font-weight: 700 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .dark .navbar-nav .nav-link.active-nav-link {
   color: #F5E6D3 !important;
   font-weight: 700 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Eliminate default browser blue focus outlines & borders across header nav elements */
+.navbar-nav .nav-link,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:focus-visible,
+.navbar-nav .dropdown-item,
+.navbar-nav .dropdown-item:focus,
+.navbar-nav .dropdown-item:focus-visible,
+.navbar-brand,
+.navbar-brand:focus,
+.navbar-brand:focus-visible,
+header .nav-link,
+header .nav-link:focus,
+header .nav-link:focus-visible,
+header a:focus,
+header a:focus-visible,
+.dashboard-nav-link:focus,
+.dashboard-nav-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ==========================================================================
@@ -1236,6 +1275,104 @@ footer ul.list-unstyled a:hover,
 @media (max-width: 639.98px) {
     .dashboard-content-area {
         padding: 1.25rem 1rem;
+    }
+}
+
+/* ==========================================================================
+   Dashboard KPI Metric Cards - Full Responsiveness for All Screen Sizes
+   ========================================================================== */
+.kpi-metric-card {
+    padding: 1.25rem 1.25rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.kpi-card-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-bottom: 0.85rem !important;
+}
+
+.kpi-card-label {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.025em !important;
+    color: #6B7280 !important; /* gray-500 */
+    white-space: nowrap !important;
+    min-width: 0 !important;
+    line-height: 1.25 !important;
+    flex-shrink: 1 !important;
+}
+
+.dark .kpi-card-label {
+    color: #D1D5DB !important; /* gray-300 */
+}
+
+.kpi-card-badge {
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    padding: 0.25rem 0.6rem !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+    flex-shrink: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Medium & Laptop Screens (1200px to 1399px): Ensure 4-column KPI cards fit with generous breathing room */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .dashboard-content-area {
+        padding: 1.75rem 1.5rem !important;
+    }
+    .kpi-metric-card {
+        padding: 1.1rem 0.95rem !important;
+    }
+    .kpi-card-header {
+        gap: 0.35rem !important;
+    }
+    .kpi-card-label {
+        font-size: 0.685rem !important;
+        letter-spacing: 0.015em !important;
+    }
+    .kpi-card-badge {
+        font-size: 0.675rem !important;
+        padding: 0.2rem 0.45rem !important;
+    }
+}
+
+/* Tablet Screens (576px to 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .kpi-metric-card {
+        padding: 1.15rem 1.15rem !important;
+    }
+    .kpi-card-label {
+        font-size: 0.725rem !important;
+    }
+}
+
+/* Mobile Screens (<576px) */
+@media (max-width: 575.98px) {
+    .kpi-metric-card {
+        padding: 1rem 1rem !important;
+    }
+    .kpi-card-label {
+        font-size: 0.7rem !important;
+    }
+    .kpi-card-badge {
+        font-size: 0.675rem !important;
+        padding: 0.2rem 0.5rem !important;
     }
 }
 
